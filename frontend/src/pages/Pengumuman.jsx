@@ -71,7 +71,7 @@ const Pengumuman = () => {
                 key={activity.id}
                 className="overflow-hidden shadow-md rounded-lg"
               >
-                <CardContent className="p-0">
+                <CardContent className="p-6">
                   <div className="flex flex-col md:flex-row">
                     {/* Image Section */}
                     <div className="md:w-1/2">

@@ -12,6 +12,9 @@ import basket from "../assets/ekskul/basket.png";
 import pramuka from "../assets/ekskul/pramuka.png";
 import padus from "../assets/ekskul/padus.png";
 import rohis from "../assets/ekskul/rohis.png";
+import perpus from "@/assets/fasilitas/perpus.png";
+import belajar from "@/assets/fasilitas/belajar.png";
+import komputer from "@/assets/fasilitas/komputer.png";
 import {
   CarouselProvider,
   Slider,
@@ -85,15 +88,15 @@ const HomePage = () => {
     },
     {
       title: "Perpustakaan",
-      image: pramuka,
+      image: perpus,
     },
     {
       title: "Ruang Belajar",
-      image: padus,
+      image: belajar,
     },
     {
       title: "Lab Komputer",
-      image: basket,
+      image: komputer,
     },
   ];
 

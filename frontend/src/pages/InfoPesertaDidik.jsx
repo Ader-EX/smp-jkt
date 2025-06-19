@@ -54,9 +54,10 @@ const InfoPesertaDidik = () => {
       />
 
       {/* Controls */}
-      <div className="flex flex-col sm:flex-row items-center gap-4 mb-4">
-        <div className="flex items-center gap-4">
-          <label className="text-sm">Show</label>
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mb-6">
+        {/* Show Entries Selector */}
+        <div className="flex items-center gap-2">
+          <label className="text-sm whitespace-nowrap">Show</label>
           <select
             value={itemsPerPage}
             onChange={(e) => setItemsPerPage(Number(e.target.value))}
@@ -68,18 +69,19 @@ const InfoPesertaDidik = () => {
               </option>
             ))}
           </select>
-          <label className="text-sm">entries</label>
+          <label className="text-sm whitespace-nowrap">entries</label>
         </div>
 
-        <div className="flex items-center gap-4">
-          <label className="text-sm">Kelas:</label>
+        {/* Kelas Selector */}
+        <div className="flex items-center gap-2">
+          <label className="text-sm whitespace-nowrap">Kelas:</label>
           <select
             value={selectedClass || ""}
             onChange={(e) => {
               setSelectedClass(e.target.value);
               setCurrentPage(1);
             }}
-            className="border rounded px-2 py-1 text-sm"
+            className="border rounded px-2 py-1 text-sm w-full"
           >
             {kelasList.map((k) => (
               <option key={k.id} value={k.id}>
@@ -87,18 +89,24 @@ const InfoPesertaDidik = () => {
               </option>
             ))}
           </select>
+        </div>
 
+        {/* Search Input */}
+        <div className="flex items-center gap-2">
           <Input
             type="text"
             placeholder="Cari nama siswa..."
-            className="border rounded px-3 py-1 text-sm w-64"
+            className="border rounded px-3 py-1 text-sm w-full"
             value={searchTerm}
             onChange={(e) => {
               setSearchTerm(e.target.value);
               setCurrentPage(1);
             }}
           />
+        </div>
 
+        {/* Search Button */}
+        <div className="flex justify-start sm:justify-end">
           <Button onClick={() => setCurrentPage(1)}>Cari</Button>
         </div>
       </div>

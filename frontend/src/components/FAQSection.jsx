@@ -8,21 +8,100 @@ const FAQSection = () => {
     {
       id: 1,
       question: "Bagaimana cara mendaftar KJP Plus?",
-      answer:
-        "Untuk mendaftar KJP Plus, Anda perlu mengunjungi kantor kelurahan setempat dengan membawa dokumen yang diperlukan seperti KTP, KK, dan surat keterangan tidak mampu. Proses pendaftaran biasanya memakan waktu 2-3 hari kerja.",
+      answer: (
+        <p>
+          Silahkan klik{" "}
+          <a
+            href="https://www.smpn167jakarta.sch.id/pendaftaran-dtks-2022/"
+            className="underline"
+          >
+            di sini
+          </a>{" "}
+          untuk info selengkapnya
+        </p>
+      ),
     },
     {
       id: 2,
       question: "Bagaimana cara mendaftar Siswa Baru di SMPN 244 Jakarta?",
-      answer:
-        "Pendaftaran siswa baru dapat dilakukan melalui sistem online PPDB DKI Jakarta. Pastikan Anda telah menyiapkan dokumen seperti ijazah SD, akta kelahiran, dan kartu keluarga. Proses pendaftaran biasanya dibuka pada bulan Mei-Juni setiap tahunnya.",
+      answer: (
+        <p>
+          Silahkan klik{" "}
+          <a
+            href="https://www.smpn167jakarta.sch.id/pendaftaran-dtks-2022/"
+            className="underline"
+          >
+            di sini
+          </a>{" "}
+          untuk info selengkapnya
+        </p>
+      ),
     },
     {
       id: 3,
       question:
         "Kapan dan Bagaimana cara mendaftar mutasi siswa masuk ke SMPN 244 Jakarta?",
-      answer:
-        "Mutasi siswa dapat dilakukan setiap awal semester (Januari dan Juli). Anda perlu mengajukan permohonan mutasi ke sekolah asal dan SMPN 244 Jakarta dengan melengkapi dokumen seperti surat keterangan pindah, rapor, dan surat keterangan kelakuan baik.",
+      answer: (
+        <p>
+          Silahkan klik{" "}
+          <a
+            href="https://www.smpn167jakarta.sch.id/pendaftaran-dtks-2022/"
+            className="underline"
+          >
+            di sini
+          </a>{" "}
+          untuk info selengkapnya
+        </p>
+      ),
+    },
+    {
+      id: 4,
+      question: "Bagaimana cara mendaftar KJP Plus?",
+      answer: (
+        <p>
+          Silahkan klik{" "}
+          <a
+            href="https://www.smpn167jakarta.sch.id/pendaftaran-dtks-2022/"
+            className="underline"
+          >
+            di sini
+          </a>{" "}
+          untuk info selengkapnya
+        </p>
+      ),
+    },
+    {
+      id: 5,
+      question: "Bagaimana cara mendaftar Siswa Baru di SMPN 244 Jakarta?",
+      answer: (
+        <p>
+          Silahkan klik{" "}
+          <a
+            href="https://www.smpn167jakarta.sch.id/pendaftaran-dtks-2022/"
+            className="underline"
+          >
+            di sini
+          </a>{" "}
+          untuk info selengkapnya
+        </p>
+      ),
+    },
+    {
+      id: 6,
+      question:
+        "Kapan dan Bagaimana cara mendaftar mutasi siswa masuk ke SMPN 244 Jakarta?",
+      answer: (
+        <p>
+          Silahkan klik{" "}
+          <a
+            href="https://www.smpn167jakarta.sch.id/pendaftaran-dtks-2022/"
+            className="underline"
+          >
+            di sini
+          </a>{" "}
+          untuk info selengkapnya
+        </p>
+      ),
     },
   ];
 

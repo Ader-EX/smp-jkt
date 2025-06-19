@@ -11,7 +11,7 @@ import { Dot, DotGroup } from "pure-react-carousel";
 
 const EkskulCard = ({ title, images }) => (
   <div className="duration-300 mr-4">
-    <div className="relative h-52">
+    <div className="relative aspect-[4/3] w-full">
       <div className="grid grid-cols-2 gap-1 h-full p-2 border bg-white">
         {images.slice(0, 4).map((image, index) => (
           <div
@@ -23,12 +23,13 @@ const EkskulCard = ({ title, images }) => (
             <img
               src={image}
               alt={`${title} - foto ${index + 1}`}
-              className="w-full h-full scale-75  "
+              className="w-full h-full object-cover object-center"
             />
           </div>
         ))}
       </div>
     </div>
+
     <div className="p-6">
       <h3 className="text-lg font-semibold text-gray-800 mb-4 leading-tight">
         {title}
@@ -46,11 +47,11 @@ const EkskulSection = ({ newsData }) => {
     if (width >= 1024) {
       setVisibleSlides(3);
       setShowArrows(true);
-      setAspectRatio({ width: 16, height: 10 });
+      setAspectRatio({ width: 16, height: 16 });
     } else if (width >= 768) {
       setVisibleSlides(2);
       setShowArrows(false);
-      setAspectRatio({ width: 16, height: 8 });
+      setAspectRatio({ width: 16, height: 16 });
     } else {
       setVisibleSlides(1);
       setShowArrows(false);

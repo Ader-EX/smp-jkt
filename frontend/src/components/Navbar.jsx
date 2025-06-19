@@ -8,6 +8,7 @@ import {
 import logo from "../assets/logo.png";
 
 import IndonesianClock from "./IndonesianClock";
+import SearchBar from "./Searchbar";
 
 export const menuItems = [
   {
@@ -113,7 +114,7 @@ const Navbar = () => {
               href={child.href || "#"}
               className={`flex px-2 py-2 justify-between w-full ${
                 isMobile
-                  ? "text-white py-2 font-medium hover:text-secondary-hover"
+                  ? "text-primary-base py-2 font-medium hover:text-secondary-hover"
                   : "text-white bg-primary-base hover:bg-secondary-hover hover:text-black "
               }`}
               onClick={(e) => {
@@ -239,6 +240,12 @@ const Navbar = () => {
       </div>
 
       {/* Logo and School Name Section */}
+      <div className="flex w-full h-full justify-end items-center px-4 py-2 ">
+        <div className="flex items-end justify-end">
+          <SearchBar />
+        </div>
+      </div>
+
       <div className="w-full justify-center flex flex-col items-center py-3 md:py-6 px-4 bg-white">
         <img
           src={logo}

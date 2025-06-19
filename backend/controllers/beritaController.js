@@ -1,4 +1,5 @@
-const { Berita } = require("../models");
+const { Berita, Pengumuman } = require("../models");
+const { Op } = require("sequelize");
 
 exports.getAll = async (req, res, next) => {
   const limit = parseInt(req.query.limit, 10) || 6;
@@ -43,6 +44,54 @@ exports.getById = async (req, res, next) => {
     if (!item) return res.status(404).json({ message: "Berita not found" });
     res.json(item);
   } catch (err) {
+    next(err);
+  }
+};
+
+exports.getBeritaPengumumanByName = async (req, res, next) => {
+  try {
+    const keyword = req.query.keyword;
+
+    if (!keyword) {
+      return res
+        .status(400)
+        .json({ message: "Keyword query parameter is required" });
+    }
+
+    const { count: countBerita, rows: rowsBerita } =
+      await Berita.findAndCountAll({
+        where: {
+          nama: {
+            [Op.like]: `%${keyword}%`,
+          },
+        },
+      });
+
+    const { count: countPengumuman, rows: rowsPengumuman } =
+      await Pengumuman.findAndCountAll({
+        where: {
+          nama: {
+            [Op.like]: `%${keyword}%`,
+          },
+        },
+      });
+
+    const taggedBerita = rowsBerita.map((item) => ({
+      ...item.toJSON(),
+      tags: "berita",
+    }));
+
+    const taggedPengumuman = rowsPengumuman.map((item) => ({
+      ...item.toJSON(),
+      tags: "pengumuman",
+    }));
+
+    res.json({
+      data: [...taggedBerita, ...taggedPengumuman],
+      count: countBerita + countPengumuman,
+    });
+  } catch (err) {
+    console.log(err);
     next(err);
   }
 };
