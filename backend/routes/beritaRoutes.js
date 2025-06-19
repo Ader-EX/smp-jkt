@@ -51,6 +51,27 @@ router.get("/newest", beritaController.getNewestBerita);
 
 /**
  * @swagger
+ * /berita/search:
+ *   get:
+ *     summary: Search Berita and Pengumuman by name
+ *     tags: [Berita]
+ *     parameters:
+ *       - in: query
+ *         name: keyword
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: The keyword to search in 'nama'
+ *     responses:
+ *       200:
+ *         description: List of matching Berita and Pengumuman
+ *       500:
+ *         description: Internal server error
+ */
+router.get("/search", beritaController.getBeritaPengumumanByName);
+
+/**
+ * @swagger
  * /berita:
  *   post:
  *     summary: Create a new berita (with photo upload)

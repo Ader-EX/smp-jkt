@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
-const PengumumanCard = ({ date, title, images, onReadMore }) => (
+const PengumumanCard = ({ id, date, title, images }) => (
   <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
     <div className="relative h-64 bg-gray-100">
       <div className="grid grid-cols-2 gap-1 h-full p-2">
@@ -41,12 +41,11 @@ const PengumumanCard = ({ date, title, images, onReadMore }) => (
       <h3 className="text-lg font-semibold text-gray-800 mb-4 leading-tight">
         {title}
       </h3>
-      <button
-        onClick={onReadMore}
-        className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded text-sm font-medium transition-colors duration-300"
-      >
-        Baca Selengkapnya
-      </button>
+      <a href={`/pengumuman/${id}`}>
+        <button className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded text-sm font-medium transition-colors duration-300">
+          Baca Selengkapnya
+        </button>
+      </a>
     </div>
   </div>
 );
@@ -69,7 +68,8 @@ const PengumumanTerbaruSection = () => {
         const formatted = data.map((item) => ({
           date: new Date(item.createdAt).toLocaleDateString(),
           title: item.nama,
-          images: item.photo ? [item.photo] : [],
+          id: item.id,
+          images: item.photo ? [`http://localhost:3000${item.photo}`] : [],
         }));
         setNewsData(formatted);
       })
@@ -93,10 +93,10 @@ const PengumumanTerbaruSection = () => {
           {newsData.map((news, idx) => (
             <PengumumanCard
               key={idx}
+              id={news.id}
               date={news.date}
               title={news.title}
               images={news.images}
-              onReadMore={() => handleReadMore(news)}
             />
           ))}
         </div>
