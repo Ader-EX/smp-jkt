@@ -1,9 +1,27 @@
 const { Kurikulum } = require("../models");
 
 exports.getAll = async (req, res, next) => {
+  const page = parseInt(req.query.page, 10) || 1;
+  const pageSize = parseInt(req.query.limit, 10) || 10;
+  const offset = (page - 1) * pageSize;
+
   try {
-    const items = await Kurikulum.findAll({ order: [["createdAt", "DESC"]] });
-    res.json(items);
+    const { count, rows } = await Kurikulum.findAndCountAll({
+      order: [["createdAt", "DESC"]],
+      limit: pageSize,
+      offset,
+    });
+
+    const totalPages = Math.ceil(count / pageSize);
+    res.json({
+      data: rows,
+      pagination: {
+        totalItems: count,
+        totalPages,
+        currentPage: page,
+        pageSize,
+      },
+    });
   } catch (err) {
     next(err);
   }
@@ -21,7 +39,26 @@ exports.getById = async (req, res, next) => {
 
 exports.create = async (req, res, next) => {
   try {
-    const newItem = await Kurikulum.create(req.body);
+    const { nama } = req.body;
+
+    const files = req.files;
+    const fileUpload = files?.file?.[0];
+    const photoUpload = files?.photo?.[0];
+
+    if (!fileUpload) {
+      return res.status(400).json({ error: "File (PDF) is required." });
+    }
+
+    const filePath = `/uploads/${fileUpload.filename}`;
+    const photoPath = photoUpload ? `/uploads/${photoUpload.filename}` : null;
+
+    const newItem = await Kurikulum.create({
+      nama,
+      file: filePath,
+      photo: photoPath,
+      createdAt: new Date(),
+    });
+
     res.status(201).json(newItem);
   } catch (err) {
     console.error("❌ Sequelize Insert Error:", err);

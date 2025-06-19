@@ -3,6 +3,17 @@ const express = require("express");
 const router = express.Router();
 const guruController = require("../controllers/guruController");
 
+const multer = require("multer");
+const path = require("path");
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => cb(null, path.join(__dirname, "../uploads")),
+  filename: (req, file, cb) => {
+    const ext = path.extname(file.originalname);
+    cb(null, `${Date.now()}${ext}`);
+  },
+});
+const upload = multer({ storage });
+
 /**
  * @swagger
  * tags:
@@ -26,19 +37,17 @@ router.get("/", guruController.getAll);
  * @swagger
  * /guru:
  *   post:
- *     summary: Create a new guru
+ *     summary: Create a new Guru member (with photo upload)
  *     tags: [Guru]
  *     requestBody:
  *       required: true
  *       content:
- *         application/json:
+ *         multipart/form-data:
  *           schema:
  *             $ref: '#/components/schemas/Guru'
- *     responses:
- *       201:
- *         description: Guru created successfully
+
  */
-router.post("/", guruController.create);
+router.post("/", upload.single("photo"), guruController.create);
 
 /**
  * @swagger

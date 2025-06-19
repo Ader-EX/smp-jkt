@@ -34,7 +34,9 @@ const Pengumuman = () => {
           id: item.id,
           title: item.nama,
           date: new Date(item.createdAt).toLocaleDateString("id-ID"),
-          image: item.photo || "https://via.placeholder.com/150",
+          image: item.photo
+            ? `http://localhost:3000${item.photo}`
+            : "https://via.placeholder.com/150",
         }))
       );
     } catch (err) {
@@ -75,7 +77,9 @@ const Pengumuman = () => {
                     <div className="md:w-1/2">
                       <img
                         src={
-                          activity.photo || "https://via.placeholder.com/150"
+                          (activity.photo &&
+                            `http://localhost:3000${activity.photo}`) ||
+                          `https://via.placeholder.com/150`
                         }
                         alt={activity.nama}
                         className="w-full h-48 object-cover"

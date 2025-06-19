@@ -1,9 +1,34 @@
 const { Guru } = require("../models");
+const { Op } = require("sequelize");
 
 exports.getAll = async (req, res, next) => {
+  const page = parseInt(req.query.page, 10) || 1;
+  const limit = parseInt(req.query.limit, 10) || 10;
+  const offset = (page - 1) * limit;
+  const search = req.query.search || "";
+
   try {
-    const items = await Guru.findAll();
-    res.json(items);
+    const { count, rows } = await Guru.findAndCountAll({
+      where: {
+        nama: {
+          [Op.like]: `%${search}%`,
+        },
+      },
+      order: [["id", "ASC"]],
+      limit,
+      offset,
+    });
+
+    const totalPages = Math.ceil(count / limit);
+    res.json({
+      data: rows,
+      pagination: {
+        totalItems: count,
+        totalPages,
+        currentPage: page,
+        pageSize: limit,
+      },
+    });
   } catch (err) {
     next(err);
   }
@@ -19,9 +44,23 @@ exports.getById = async (req, res, next) => {
   }
 };
 
+const path = require("path");
+
 exports.create = async (req, res, next) => {
   try {
-    const newItem = await Guru.create(req.body);
+    const { nama, nip, status, mapel, tugasTambahan } = req.body;
+
+    const photo = req.file ? `/uploads/${req.file.filename}` : null;
+
+    const newItem = await Guru.create({
+      nama,
+      nip,
+      status,
+      mapel,
+      tugasTambahan,
+      photo,
+    });
+
     res.status(201).json(newItem);
   } catch (err) {
     console.error("❌ Sequelize Insert Error:", err);

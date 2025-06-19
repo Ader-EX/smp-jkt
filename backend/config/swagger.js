@@ -33,7 +33,11 @@ const options = {
             id: { type: "integer", example: 1 },
             nama: { type: "string", example: "Siti Aminah" },
             nis: { type: "string", example: "2024001" },
-            jenisKelamin: { type: "string", enum: ["L", "P"], example: "P" },
+            jenisKelamin: {
+              type: "string",
+              enum: ["L", "P"],
+              example: "P",
+            },
             agama: { type: "string", example: "Islam" },
             kelasId: { type: "integer", example: 1 },
           },
@@ -45,7 +49,11 @@ const options = {
             id: { type: "integer", example: 10 },
             nama: { type: "string", example: "Upacara Kemerdekaan" },
             description: { type: "string", example: "Deskripsi berita..." },
-            photo: { type: "string", example: "https://example.com/photo.jpg" },
+            photo: {
+              type: "string",
+              format: "binary",
+              description: "Upload a PNG or JPG file",
+            },
             createdAt: { type: "string", format: "date-time" },
           },
         },
@@ -58,7 +66,8 @@ const options = {
             description: { type: "string", example: "Deskripsi pengumuman..." },
             photo: {
               type: "string",
-              example: "https://example.com/announce.jpg",
+              format: "binary",
+              description: "Upload a PNG or JPG file",
             },
             createdAt: { type: "string", format: "date-time" },
           },
@@ -72,20 +81,31 @@ const options = {
             nip: { type: "string", example: "1987654321" },
             status: { type: "string", example: "Aktif" },
             mapel: { type: "string", example: "Matematika" },
-            tugasTambahan: { type: "string", example: "Wakil Kepala Sekolah" },
-            photo: { type: "string", example: "https://example.com/guru.jpg" },
+            tugasTambahan: {
+              type: "string",
+              example: "Wakil Kepala Sekolah",
+            },
+            photo: {
+              type: "string",
+              format: "binary",
+              description: "Upload a PNG or JPG file",
+            },
           },
         },
         Staff: {
           type: "object",
-          required: ["nama", "nip"],
+          required: ["nama", "nip", "status", "jabatan", "photo"],
           properties: {
             id: { type: "integer", example: 2 },
             nama: { type: "string", example: "Dewi Lestari" },
             nip: { type: "string", example: "2012345678" },
             status: { type: "string", example: "Kontrak" },
             jabatan: { type: "string", example: "Bendahara" },
-            photo: { type: "string", example: "https://example.com/staff.jpg" },
+            photo: {
+              type: "string",
+              format: "binary",
+              description: "Upload a PNG or JPG file",
+            },
           },
         },
         Kurikulum: {
@@ -94,9 +114,15 @@ const options = {
           properties: {
             id: { type: "integer", example: 4 },
             nama: { type: "string", example: "Kurikulum Merdeka" },
+            photo: {
+              type: "string",
+              format: "binary",
+              description: "Upload a PNG or JPG file",
+            },
             file: {
               type: "string",
-              example: "https://example.com/kurikulum.pdf",
+              format: "binary",
+              description: "Upload a PDF file",
             },
             createdAt: { type: "string", format: "date-time" },
           },

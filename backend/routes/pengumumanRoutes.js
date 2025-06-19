@@ -3,6 +3,18 @@ const express = require("express");
 const router = express.Router();
 const pengumumanController = require("../controllers/pengumumanController");
 
+const multer = require("multer");
+const path = require("path");
+
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => cb(null, path.join(__dirname, "../uploads")),
+  filename: (req, file, cb) => {
+    const ext = path.extname(file.originalname);
+    cb(null, `${Date.now()}${ext}`);
+  },
+});
+const upload = multer({ storage });
+
 /**
  * @swagger
  * tags:
@@ -55,19 +67,17 @@ router.get("/newest", pengumumanController.getNewestPengumuman);
  * @swagger
  * /pengumuman:
  *   post:
- *     summary: Create a new pengumuman
+ *     summary: Create a new pengumuman member (with photo upload)
  *     tags: [Pengumuman]
  *     requestBody:
  *       required: true
  *       content:
- *         application/json:
+ *         multipart/form-data:
  *           schema:
  *             $ref: '#/components/schemas/Pengumuman'
- *     responses:
- *       201:
- *         description: Pengumuman created successfully
+ 
  */
-router.post("/", pengumumanController.create);
+router.post("/", upload.single("photo"), pengumumanController.create);
 
 /**
  * @swagger
