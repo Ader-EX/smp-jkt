@@ -1,4 +1,5 @@
 const { Kelas, Siswa } = require("../models");
+const { Op } = require("sequelize");
 
 exports.getAll = async (req, res, next) => {
   try {
@@ -9,11 +10,63 @@ exports.getAll = async (req, res, next) => {
   }
 };
 
-exports.getById = async (req, res, next) => {
+exports.getNames = async (req, res, next) => {
   try {
-    const item = await Kelas.findByPk(req.params.id, { include: Siswa });
-    if (!item) return res.status(404).json({ message: "Kelas not found" });
-    res.json(item);
+    const classes = await Kelas.findAll({
+      attributes: ["id", "namaKelas"],
+      order: [["namaKelas", "ASC"]],
+    });
+    res.json(classes);
+  } catch (err) {
+    next(err);
+  }
+};
+
+exports.getById = async (req, res, next) => {
+  const { page = 1, pageSize = 10, search = "" } = req.query;
+  const offset = (page - 1) * pageSize;
+  const limit = parseInt(pageSize, 10);
+
+  try {
+    // Find the kelas by ID
+    const kelas = await Kelas.findByPk(req.params.id);
+
+    if (!kelas) return res.status(404).json({ message: "Kelas not found" });
+
+    // Count total matching siswa
+    const totalData = await Siswa.count({
+      where: {
+        kelasId: req.params.id,
+        nama: {
+          [Op.like]: `%${search}%`,
+        },
+      },
+    });
+
+    // Fetch paginated siswa
+    const siswaList = await Siswa.findAll({
+      where: {
+        kelasId: req.params.id,
+        nama: {
+          [Op.like]: `%${search}%`,
+        },
+      },
+      limit,
+      offset,
+    });
+
+    const totalPages = Math.ceil(totalData / limit);
+
+    res.json({
+      kelas,
+      siswa: siswaList,
+      pagination: {
+        totalData,
+        totalPages,
+        currentPage: parseInt(page, 10),
+        pageSize: limit,
+      },
+    });
   } catch (err) {
     next(err);
   }

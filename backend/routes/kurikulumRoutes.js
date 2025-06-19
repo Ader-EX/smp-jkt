@@ -3,6 +3,27 @@ const express = require("express");
 const router = express.Router();
 const kurikulumController = require("../controllers/kurikulumController");
 
+const multer = require("multer");
+const path = require("path");
+
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => cb(null, path.join(__dirname, "../uploads")),
+  filename: (req, file, cb) => {
+    const ext = path.extname(file.originalname);
+    cb(null, `${Date.now()}${ext}`);
+  },
+});
+const upload = multer({
+  storage,
+  fileFilter: (req, file, cb) => {
+    const allowedTypes = ["application/pdf", "image/png", "image/jpeg"];
+    if (allowedTypes.includes(file.mimetype)) {
+      cb(null, true);
+    } else {
+      cb(new Error("Only PDF, PNG, and JPG files are allowed"));
+    }
+  },
+});
 /**
  * @swagger
  * tags:
@@ -26,19 +47,24 @@ router.get("/", kurikulumController.getAll);
  * @swagger
  * /kurikulum:
  *   post:
- *     summary: Create a new kurikulum
+ *     summary: Create a new kurikulum member (with photo upload)
  *     tags: [Kurikulum]
  *     requestBody:
  *       required: true
  *       content:
- *         application/json:
+ *         multipart/form-data:
  *           schema:
  *             $ref: '#/components/schemas/Kurikulum'
- *     responses:
- *       201:
- *         description: Kurikulum created successfully
+ 
  */
-router.post("/", kurikulumController.create);
+router.post(
+  "/",
+  upload.fields([
+    { name: "file", maxCount: 1 },
+    { name: "photo", maxCount: 1 },
+  ]),
+  kurikulumController.create
+);
 
 /**
  * @swagger

@@ -1,9 +1,23 @@
 const { Berita } = require("../models");
 
 exports.getAll = async (req, res, next) => {
+  const limit = parseInt(req.query.limit, 10) || 6;
+  const page = parseInt(req.query.page, 10) || 1;
+  const offset = (page - 1) * limit;
+
   try {
-    const items = await Berita.findAll({ order: [["createdAt", "DESC"]] });
-    res.json(items);
+    const { count, rows } = await Berita.findAndCountAll({
+      order: [["createdAt", "DESC"]],
+      limit,
+      offset,
+    });
+
+    res.json({
+      data: rows,
+      totalItems: count,
+      totalPages: Math.ceil(count / limit),
+      currentPage: page,
+    });
   } catch (err) {
     next(err);
   }
@@ -35,7 +49,16 @@ exports.getById = async (req, res, next) => {
 
 exports.create = async (req, res, next) => {
   try {
-    const newItem = await Berita.create(req.body);
+    const { nama, description, tempat } = req.body;
+    const photo = req.file ? req.file.filename : null;
+
+    const newItem = await Berita.create({
+      nama,
+      description,
+      tempat,
+      photo,
+    });
+
     res.status(201).json(newItem);
   } catch (err) {
     console.error("❌ Sequelize Insert Error:", err);

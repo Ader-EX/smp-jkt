@@ -1,9 +1,34 @@
 const { Staff } = require("../models");
+const { Op } = require("sequelize");
 
 exports.getAll = async (req, res, next) => {
+  const page = parseInt(req.query.page, 10) || 1;
+  const limit = parseInt(req.query.limit, 10) || 10;
+  const offset = (page - 1) * limit;
+  const search = req.query.search || "";
+
   try {
-    const items = await Staff.findAll();
-    res.json(items);
+    const { count, rows } = await Staff.findAndCountAll({
+      where: {
+        nama: {
+          [Op.like]: `%${search}%`,
+        },
+      },
+      order: [["id", "ASC"]],
+      limit,
+      offset,
+    });
+
+    const totalPages = Math.ceil(count / limit);
+    res.json({
+      data: rows,
+      pagination: {
+        totalItems: count,
+        totalPages,
+        currentPage: page,
+        pageSize: limit,
+      },
+    });
   } catch (err) {
     next(err);
   }
@@ -21,7 +46,10 @@ exports.getById = async (req, res, next) => {
 
 exports.create = async (req, res, next) => {
   try {
-    const newItem = await Staff.create(req.body);
+    const { nama, nip, status, jabatan } = req.body;
+    const photo = req.file ? `/uploads/${req.file.filename}` : null;
+
+    const newItem = await Staff.create({ nama, nip, status, jabatan, photo });
     res.status(201).json(newItem);
   } catch (err) {
     console.error("❌ Sequelize Insert Error:", err);

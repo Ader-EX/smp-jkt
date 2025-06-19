@@ -24,6 +24,18 @@ router.get("/", kelasController.getAll);
 
 /**
  * @swagger
+ * /names:
+ *   get:
+ *     summary: Get list of all kelas names
+ *     tags: [Kelas]
+ *     responses:
+ *       200:
+ *         description: Array of kelas objects
+ */
+router.get("/names", kelasController.getNames);
+
+/**
+ * @swagger
  * /kelas:
  *   post:
  *     summary: Create a new kelas

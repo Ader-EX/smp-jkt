@@ -24,6 +24,7 @@ import BeritaTerbaruSection from "@/components/BeritaCard";
 import PengumumanTerbaruSection from "@/components/PengumumanCard";
 import EkskulSection from "@/components/EkskulCard";
 import FasilitasSection from "@/components/FasilitasCard";
+import FAQSection from "@/components/FAQSection";
 
 const HomePage = () => {
   const [visibleSlides, setVisibleSlides] = useState(3);
@@ -284,6 +285,7 @@ const HomePage = () => {
       <PengumumanTerbaruSection newsData={sampleNewsData} />
       <FasilitasSection facilities={fasilitasData} />
       <EkskulSection newsData={ekskulData} />
+      <FAQSection />
     </>
   );
 };

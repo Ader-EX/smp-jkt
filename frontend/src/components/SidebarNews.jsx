@@ -13,7 +13,7 @@ const SidebarNews = ({ sidebarActivities, tag = "pengumuman" }) => {
             <a
               href={`/${tag}/${item.id}`}
               key={index}
-              className="flex items-start p-4 border-b border-gray-100 hover:bg-gray-50 transition-colors"
+              className="flex items-start p-4 border-b border-gray-100 hover:bg-gray-200 transition-colors"
             >
               <img
                 src={item.image}

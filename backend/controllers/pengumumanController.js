@@ -35,7 +35,22 @@ exports.getById = async (req, res, next) => {
 
 exports.create = async (req, res, next) => {
   try {
-    const newItem = await Pengumuman.create(req.body);
+    if (!req.body) {
+      return res
+        .status(400)
+        .json({ error: "Request body is missing or invalid format." });
+    }
+
+    const { nama, description } = req.body;
+    const photo = req.file ? `/uploads/${req.file.filename}` : null;
+
+    if (!nama || !description) {
+      return res
+        .status(400)
+        .json({ error: "Missing required fields: nama and description." });
+    }
+
+    const newItem = await Pengumuman.create({ nama, description, photo });
     res.status(201).json(newItem);
   } catch (err) {
     console.error("❌ Sequelize Insert Error:", err);

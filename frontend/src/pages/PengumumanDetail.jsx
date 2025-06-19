@@ -19,7 +19,9 @@ const PengumumanDetail = () => {
           title: res.data.nama,
           date: new Date(res.data.createdAt).toLocaleDateString("id-ID"),
           place: res.data.tempat || "", // If tempat exists
-          image: res.data.photo || "https://via.placeholder.com/800x400",
+          image: res.data.photo
+            ? `http://localhost:3000${res.data.photo}`
+            : "https://via.placeholder.com/150",
           content: res.data.description,
         });
       } catch (err) {
@@ -38,7 +40,9 @@ const PengumumanDetail = () => {
             id: item.id,
             title: item.nama,
             date: new Date(item.createdAt).toLocaleDateString("id-ID"),
-            image: item.photo || "https://via.placeholder.com/150",
+            image: item.photo
+              ? `http://localhost:3000${item.photo}`
+              : "https://via.placeholder.com/150",
           }))
         );
       } catch (err) {

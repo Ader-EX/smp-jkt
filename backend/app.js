@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("express").json;
 const swaggerUi = require("swagger-ui-express");
 const swaggerSpec = require("./config/swagger");
+const path = require("path");
 
 const errorHandler = require("./middleware/errorHandler");
 require("dotenv").config();
@@ -13,6 +14,7 @@ const cors = require("cors");
 app.use(cors());
 // Swagger route
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 // Mount routes
 app.use("/kelas", require("./routes/kelasRoutes"));

@@ -2,6 +2,16 @@
 const express = require("express");
 const router = express.Router();
 const staffController = require("../controllers/staffController");
+const multer = require("multer");
+const path = require("path");
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => cb(null, path.join(__dirname, "../uploads")),
+  filename: (req, file, cb) => {
+    const ext = path.extname(file.originalname);
+    cb(null, `${Date.now()}${ext}`);
+  },
+});
+const upload = multer({ storage });
 
 /**
  * @swagger
@@ -21,24 +31,21 @@ const staffController = require("../controllers/staffController");
  *         description: Array of staff objects
  */
 router.get("/", staffController.getAll);
-
 /**
  * @swagger
  * /staff:
  *   post:
- *     summary: Create a new staff member
+ *     summary: Create a new staff member (with photo upload)
  *     tags: [Staff]
  *     requestBody:
  *       required: true
  *       content:
- *         application/json:
+ *         multipart/form-data:
  *           schema:
  *             $ref: '#/components/schemas/Staff'
- *     responses:
- *       201:
- *         description: Staff created successfully
+ 
  */
-router.post("/", staffController.create);
+router.post("/", upload.single("photo"), staffController.create);
 
 /**
  * @swagger

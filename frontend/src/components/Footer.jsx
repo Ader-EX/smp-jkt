@@ -2,7 +2,7 @@ import logoBG from "../assets/logo-bg.png"; // Updated logo import
 
 const Footer = () => {
   return (
-    <footer className="w-full flex flex-col items-center justify-center p-4 bg-primary-base text-white text-center">
+    <footer className="w-full flex flex-col items-center justify-center p-4 bg-primary-base text-white text-center mt-10">
       <img src={logoBG} alt="SMP Logo" className="h-16 mb-4" />
 
       <h2 className="text-lg md:text-xl font-bold">SMP Negeri 244 Jakarta</h2>
