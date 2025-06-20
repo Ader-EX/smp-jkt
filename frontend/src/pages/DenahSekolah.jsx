@@ -119,12 +119,6 @@ const DenahSekolah = () => {
       </div>
 
       {/* Back to Top Button */}
-      <button
-        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        className="fixed bottom-6 right-6 bg-gray-600 text-white p-3 rounded-full shadow-lg hover:bg-gray-700 transition-colors duration-200"
-      >
-        <ChevronUp className="w-5 h-5" />
-      </button>
     </div>
   );
 };
