@@ -1,7 +1,8 @@
 import PageHeader from "@/components/ui/PageHeader";
 import React from "react";
 import menanam from "@/assets/banner/menanam.png";
-
+import sekolah from "@/assets/fasilitas/sekolah-1.png";
+import sekolahTiga from "@/assets/fasilitas/sekolah-3.png";
 const VisionMission = () => {
   return (
     <div className="min-h-screen px-6 py-10 md:px-20 md:py-16">
@@ -31,7 +32,7 @@ const VisionMission = () => {
               <img
                 src={menanam}
                 alt="Modern School Building"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover border-2 border-black"
               />
             </div>
           </div>
@@ -174,11 +175,11 @@ const VisionMission = () => {
 
             {/* School Image */}
             <div className="flex items-center justify-center">
-              <div className="bg-gray-200 rounded-lg overflow-hidden w-full h-full">
+              <div className="bg-gray-200 rounded-lg overflow-hidden w-full h-[30rem]">
                 <img
-                  src="https://images.unsplash.com/photo-1509062522246-3755977927d7?..."
+                  src={sekolahTiga}
                   alt="Modern School Building"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover border-2"
                 />
               </div>
             </div>
@@ -190,15 +191,15 @@ const VisionMission = () => {
       <div className="bg-white rounded-lg shadow-sm">
         <div className="p-8">
           <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-gray-800">MISI SEKOLAH</h2>
+            <h2 className="text-3xl font-bold text-gray-800">TUJUAN </h2>
             <div className="w-16 h-1 bg-yellow-500 mx-auto mt-4"></div>
           </div>
-          <div className="flex items-center justify-center">
-            <div className="bg-gray-200 rounded-lg overflow-hidden w-[50%] h-[50%]">
+          <div className="flex items-center justify-center border h-[50%]">
+            <div className="bg-gray-200 rounded-lg w-full h-[30rem] overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1509062522246-3755977927d7?..."
+                src={sekolah}
                 alt="Modern School Building"
-                className=" object-cover"
+                className="object-cover w-full h-full  border-2 border-black"
               />
             </div>
           </div>
