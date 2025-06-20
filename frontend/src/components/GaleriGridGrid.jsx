@@ -2,11 +2,8 @@ import ReactPaginate from "react-paginate";
 
 import { useState } from "react";
 import pramukaGambar from "../assets/ekskul/pramuka-gambar.png";
-import pmrGambar from "../assets/ekskul/pmr-gambar.png";
 import rohisGambar from "../assets/ekskul/rohis-gambar.png";
-import paskibraGambar from "../assets/ekskul/paskibra-gambar.png";
-import paduanSuaraGambar from "../assets/ekskul/padus-gambar.png";
-import basketGambar from "../assets/ekskul/basket-gambar.png";
+
 import menanamGambar from "../assets/ekskul/menanam.png";
 import EkskulGridCard from "./EkskulGridCard";
 
