@@ -117,7 +117,7 @@ const FAQSection = () => {
       {/* Header */}
       <div className="mb-8">
         <div className="flex items-center mb-2">
-          <div className="w-1 h-8 bg-orange-400 mr-4"></div>
+          <div className="w-1 h-8 bg-yellow-400 mr-4"></div>
           <p className="text-gray-600 text-lg">
             Pertanyaan yang Sering Diajukan
           </p>
