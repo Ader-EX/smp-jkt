@@ -12,6 +12,7 @@ const options = {
     servers: [
       {
         url: "http://localhost:3000",
+        // url: "http://43.157.250.132:3000",
       },
     ],
     components: {
@@ -30,7 +31,6 @@ const options = {
           type: "object",
           required: ["nama", "nis", "jenisKelamin", "kelasId"],
           properties: {
-            id: { type: "integer", example: 1 },
             nama: { type: "string", example: "Siti Aminah" },
             nis: { type: "string", example: "2024001" },
             jenisKelamin: {
