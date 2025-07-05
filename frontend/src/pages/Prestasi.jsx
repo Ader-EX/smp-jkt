@@ -22,8 +22,8 @@ const Prestasi = () => {
     },
   ];
   return (
-    <div className="min-h-screen  py-8 px-4">
-      <div className="max-w-6xl mx-auto">
+    <div className="min-h-screen px-6 py-10 md:px-20 md:py-16">
+      <div className="">
         <PageHeader
           title="Prestasi"
           breadcrumbs={[
@@ -33,10 +33,10 @@ const Prestasi = () => {
           ]}
         />
         <div className="mb-6">
-          <h2 className="text-2xl font-bold text-center text-primary-base mb-6">
+          <h2 className="text-2xl font-bold text-center text-primary-base mb-4">
             PRESTASI AKADEMIK
           </h2>
-          <div className="w-16 h-1 bg-yellow-400 mx-auto mb-8"></div>
+          <div className="w-32 h-1 bg-yellow-400 mx-auto mb-8"></div>
           <h3 className="text-lg font-semibold">
             Prestasi akademik tahun pelajaran 2024/2025
           </h3>
@@ -57,10 +57,10 @@ const Prestasi = () => {
           ></iframe>
         </div>
         <div className="mt-10">
-          <h2 className="text-2xl font-bold text-center text-primary-base mb-6">
+          <h2 className="text-2xl font-bold text-center text-primary-base mb-4">
             PRESTASI NON AKADEMIK
           </h2>
-          <div className="w-16 h-1 bg-yellow-400 mx-auto mb-8"></div>
+          <div className="w-32 h-1 bg-yellow-400 mx-auto mb-8"></div>
           <h3 className="text-lg font-semibold">
             Prestasi akademik tahun pelajaran 2024/2025
           </h3>

@@ -115,7 +115,7 @@ const Navbar = () => {
               className={`flex px-2 py-2 justify-between w-full ${
                 isMobile
                   ? "text-primary-base py-2 font-medium hover:text-secondary-hover"
-                  : "text-white bg-primary-base hover:bg-secondary-hover hover:text-black "
+                  : "text-white bg-primary-base hover:bg-yellow-400 hover:text-black "
               }`}
               onClick={(e) => {
                 if (child.children) {
@@ -156,7 +156,7 @@ const Navbar = () => {
           <li key={itemKey} className="relative group">
             <a
               href={item.href || "#"}
-              className="py-2 px-3 flex justify-center items-center font-semibold text-white hover:text-secondary-hover rounded"
+              className="py-2 px-3 flex justify-center items-center font-semibold text-white hover:text-yellow-400 rounded"
               onClick={(e) => {
                 if (item.children) {
                   e.preventDefault();
@@ -222,13 +222,13 @@ const Navbar = () => {
   return (
     <nav className="border-gray-200 shadow-md w-full">
       <div className="bg-primary-base w-full py-2 md:py-4 px-2 md:px-4 text-white text-xs font-extralight">
-        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1 sm:gap-2">
+        <div className="mx-10 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1 sm:gap-2">
           <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
-            <section className="flex gap-1 items-center">
+            <section className="flex gap-2 items-center">
               <RiPhoneFill className="self-center text-xs" />
               <span className="text-xs">(021) 4400872</span>
             </section>
-            <section className="flex gap-1 items-center">
+            <section className="flex gap-2 items-center">
               <RiMailFill className="self-center text-xs" />
               <span className="text-xs">smpnegeri244@gmail.com</span>
             </section>
@@ -260,7 +260,7 @@ const Navbar = () => {
         </h4>
       </div>
       {/* Main Navigation */}
-      <div className="w-full bg-primary-base mx-auto py-2 px-2 flex justify-center items-center">
+      <div className="w-full bg-red-500 mx-auto py-2 px-2 flex justify-center items-center">
         {renderDesktopMenu(menuItems)}
 
         {/* Mobile Menu Button */}
@@ -301,7 +301,7 @@ const Navbar = () => {
       </div>
 
       {/* Secondary color bar */}
-      <div className="w-full bg-secondary-hover h-3"></div>
+      <div className="w-full bg-yellow-400 h-2"></div>
 
       {/* Mobile Dropdown */}
       {isMobileMenuOpen && (

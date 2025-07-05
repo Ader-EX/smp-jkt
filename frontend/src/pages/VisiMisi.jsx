@@ -18,11 +18,11 @@ const VisionMission = () => {
 
       {/* Vision Section */}
       <div className="bg-white rounded-lg shadow-sm mb-8">
-        <div className="text-center py-8">
-          <h2 className="text-3xl font-bold text-gray-800 mb-8">
+        <div className="text-center py-2">
+          <h2 className="text-2xl font-bold text-green-800 mb-4">
             VISI SEKOLAH
           </h2>
-          <div className="w-16 h-1 bg-yellow-500 mx-auto mt-4"></div>
+          <div className="w-32 h-1 bg-yellow-400 mx-auto mb-8"></div>
         </div>
 
         <div className="grid md:grid-cols-[1fr_1.3fr] gap-8">
@@ -117,8 +117,8 @@ const VisionMission = () => {
       <div className="bg-white rounded-lg shadow-sm">
         <div className="p-8">
           <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-gray-800">MISI SEKOLAH</h2>
-            <div className="w-16 h-1 bg-yellow-500 mx-auto mt-4"></div>
+            <h2 className="text-2xl font-bold text-green-800 mb-4">MISI SEKOLAH</h2>
+            <div className="w-32 h-1 bg-yellow-400 mx-auto mb-4"></div>
           </div>
 
           <div className="grid md:grid-cols-[1fr_1.3fr] gap-8">
@@ -127,7 +127,7 @@ const VisionMission = () => {
               <p className="text-justify mb-6">
                 Sesuai dengan visi yang telah dirumuskan dan untuk mewujudkan
                 visi tersebut diperlukan suatu misi. Adapun Misi dari SMP Negeri
-                ... yang dirumuskan berdasarkan visi adalah sebagai berikut:
+                244 Jakarta yang dirumuskan berdasarkan visi adalah sebagai berikut:
               </p>
 
               <ol className="list-decimal list-inside space-y-3 text-sm">
@@ -191,8 +191,8 @@ const VisionMission = () => {
       <div className="bg-white rounded-lg shadow-sm">
         <div className="p-8">
           <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-gray-800">TUJUAN </h2>
-            <div className="w-16 h-1 bg-yellow-500 mx-auto mt-4"></div>
+            <h2 className="text-2xl font-bold text-green-800 mb-4">TUJUAN </h2>
+            <div className="w-28 h-1 bg-yellow-400 mx-auto mb-4"></div>
           </div>
           <div className="flex items-center justify-center border h-[50%]">
             <div className="bg-gray-200 rounded-lg w-full h-[30rem] overflow-hidden">

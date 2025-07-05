@@ -62,7 +62,9 @@ const Guru = () => {
           <label className="text-sm">entries</label>
         </div>
 
+        <div className="w-full flex justify-end items-center mt-4">
         <div className="flex items-center gap-4">
+          <h6>Cari:</h6>
           <Input
             type="text"
             placeholder="Cari nama guru..."
@@ -73,8 +75,9 @@ const Guru = () => {
               setCurrentPage(1);
             }}
           />
-          <Button onClick={() => setCurrentPage(1)}>Cari</Button>
+          
         </div>
+      </div>
       </div>
 
       {/* Table */}
@@ -83,12 +86,12 @@ const Guru = () => {
           <thead>
             <tr className="bg-yellow-400">
               <th className="border px-4 py-2">No</th>
-              <th className="border px-4 py-2">Foto</th>
               <th className="border px-4 py-2">Nama Guru</th>
               <th className="border px-4 py-2">NIP</th>
               <th className="border px-4 py-2">Status</th>
               <th className="border px-4 py-2">Mapel yang Diampu</th>
               <th className="border px-4 py-2">Tugas Tambahan</th>
+              <th className="border px-4 py-2">Foto</th>
             </tr>
           </thead>
           <tbody>
@@ -96,6 +99,13 @@ const Guru = () => {
               <tr key={guru.id} className="hover:bg-gray-50">
                 <td className="border px-4 py-2 text-sm">
                   {(currentPage - 1) * pageSize + idx + 1}
+                </td>
+                <td className="border px-4 py-2 text-sm">{guru.nama}</td>
+                <td className="border px-4 py-2 text-sm">{guru.nip}</td>
+                <td className="border px-4 py-2 text-sm">{guru.status}</td>
+                <td className="border px-4 py-2 text-sm">{guru.mapel}</td>
+                <td className="border px-4 py-2 text-sm">
+                  {guru.tugasTambahan}
                 </td>
                 <td className="border px-4 py-2 text-sm">
                   {guru.photo && (
@@ -109,13 +119,6 @@ const Guru = () => {
                       }}
                     />
                   )}
-                </td>
-                <td className="border px-4 py-2 text-sm">{guru.nama}</td>
-                <td className="border px-4 py-2 text-sm">{guru.nip}</td>
-                <td className="border px-4 py-2 text-sm">{guru.status}</td>
-                <td className="border px-4 py-2 text-sm">{guru.mapel}</td>
-                <td className="border px-4 py-2 text-sm">
-                  {guru.tugasTambahan}
                 </td>
               </tr>
             ))}

@@ -91,7 +91,7 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="w-full max-w-2xl mx-auto relative">
+    <div className="mx-10 w-full max-w-2xl relative">
       <div className="relative">
         <div className="flex items-center border-2 border-gray-300 rounded-lg overflow-hidden bg-white shadow-sm focus-within:border-blue-500 focus-within:shadow-md transition-all duration-200">
           <div className="flex-1 relative">
@@ -100,7 +100,7 @@ const SearchBar = () => {
               value={searchTerm}
               onChange={handleSearchChange}
               placeholder="Cari berita atau pengumuman..."
-              className="w-full px-4 py-3 text-gray-700 focus:outline-none text-sm md:text-base"
+              className="w-64 px-4 py-2 text-gray-700 focus:outline-none text-sm"
             />
             {isLoading && (
               <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
@@ -122,7 +122,7 @@ const SearchBar = () => {
             onClick={() =>
               searchTerm.trim().length > 5 && performSearch(searchTerm)
             }
-            className="bg-green-600 hover:bg-green-700 text-white px-4 md:px-6 py-3 transition-colors duration-200"
+            className="bg-green-800 hover:bg-green-700 text-white px-4 md:px-6 py-4 transition-colors duration-200"
           >
             <RiSearchLine className="text-xl" />
           </button>

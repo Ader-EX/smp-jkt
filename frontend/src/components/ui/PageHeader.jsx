@@ -21,7 +21,7 @@ const PageHeader = ({ title, subtitle, breadcrumbs }) => {
       <div className="flex flex-wrap items-center text-sm md:text-base font-medium text-green-600 space-x-1">
         {breadcrumbs.map((item, index) => (
           <React.Fragment key={index}>
-            {index > 0 && <ChevronRight className="w-4 h-4 inline-block" />}
+            {index > 0 && <ChevronRight className="w-4 h-4 inline-block text-yellow-400" />}
             {item.href ? (
               <Link
                 to={item.href}

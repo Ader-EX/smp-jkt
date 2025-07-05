@@ -108,9 +108,14 @@ const Kurikulum = () => {
             </div>
 
             <div className="p-4">
-              <h3 className="text-lg font-semibold text-gray-800 text-center mb-4">
+              <h3 className="text-sm text-gray-500">
+                12/06/2025
+              </h3>
+              <h3 className="text-lg font-semibold text-gray-800 mb-8">
                 {item.nama}
               </h3>
+
+              <div className="flex justify-end">
 
               {/* Download Button */}
               <button
@@ -120,7 +125,7 @@ const Kurikulum = () => {
                     `${item.nama}.pdf`
                   )
                 }
-                className="w-full bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2"
+                className="flex justify-end bg-green-800 hover:bg-green-700 text-white py-2 px-4 rounded-none transition-colors duration-200 flex items-center justify-center space-x-2"
               >
                 <svg
                   className="w-4 h-4"
@@ -135,9 +140,10 @@ const Kurikulum = () => {
                     d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
                   />
                 </svg>
-                <span>Download PDF</span>
+                <span>Unduh</span>
               </button>
             </div>
+          </div>
           </div>
         ))}
       </div>

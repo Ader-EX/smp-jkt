@@ -6,13 +6,17 @@ const StrukturOrganisasi = () => {
     <div>
       <section className="min-h-screen px-6 py-10 md:px-20 md:py-16">
         <PageHeader
-          title="Tata Tertib"
+          title="Struktur Organisasi"
           breadcrumbs={[
             { label: "Beranda", href: "/" },
             { label: "Profil", href: "/profil-sekolah" },
             { label: "Struktur Organisasi" }, // current page
           ]}
         />
+        <h3 className="text-center font-bold text-2xl text-green-800 mb-4">
+          STRUKTUR ORGANISASI
+        </h3>
+        <div className="w-32 h-1 bg-yellow-400 mx-auto mb-8"></div>
         <div className="flex w-full justify-center">
           <img src={struktur} alt="Kalender Akademik" className="" />
         </div>

@@ -4,8 +4,8 @@ import React from "react";
 
 const Ekstrakurikuler = () => {
   return (
-    <div className="min-h-screen  py-8 px-4">
-      <div className="max-w-6xl mx-auto">
+    <div className="min-h-screen px-6 py-10 md:px-20 md:py-16">
+      <div className="">
         <PageHeader
           title="Ekstrakurikuler"
           breadcrumbs={[

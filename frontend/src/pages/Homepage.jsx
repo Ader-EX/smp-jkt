@@ -226,7 +226,7 @@ const HomePage = () => {
                     slide={index}
                     className={`w-3 h-3 rounded-full transition-all duration-300 ${
                       index === currentSlide
-                        ? "bg-green-500"
+                        ? "bg-yellow-400"
                         : "bg-gray-300 hover:bg-gray-400"
                     }`}
                   />
@@ -239,8 +239,8 @@ const HomePage = () => {
       <section className="px-4 md:px-12 lg:px-20 py-12 bg-white">
         {/* Welcome Section */}
         <div className="max-w-5xl mx-auto text-center md:text-left mb-12">
-          <p className="border-l-2 border-yellow-600 pl-6 text-yellow-600 font-semibold mb-2">
-            <span className="text-black">Selamat Datang di</span>
+          <p className="border-l-4 border-yellow-400 pl-6 text-yellow-400 mb-0 text-xl">
+            <span className="text-gray-600">Selamat Datang di</span>
           </p>
           <h2 className="text-2xl md:text-3xl font-bold text-green-800 mb-4">
             Website SMP Negeri 244 Jakarta
@@ -265,9 +265,11 @@ const HomePage = () => {
         </div>
 
         {/* Data Sekolah Box */}
-        <div className="bg-white shadow-lg border rounded-lg max-w-6xl mx-auto p-6">
-          <h3 className="text-yellow-600 font-semibold">Informasi</h3>
-          <h4 className="text-green-700 font-bold text-xl mb-6">
+        <div className="bg-white shadow-lg border rounded-none max-w-6xl mx-auto p-6">
+          <p className="border-l-4 border-yellow-400 pl-4 text-yellow-400 mb-0 text-xl">
+            <span className="text-gray-600">Informasi</span>
+          </p>
+          <h4 className="text-2xl md:text-3xl font-bold text-green-800 mb-8">
             Data Sekolah
           </h4>
 

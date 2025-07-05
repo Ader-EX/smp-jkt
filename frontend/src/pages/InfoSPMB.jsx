@@ -225,7 +225,7 @@ const InfoSPMB = () => {
       {/* Header */}
       <div className="mb-8">
         <PageHeader
-          title="Info SPMB"
+          title="Informasi SPMB"
           breadcrumbs={[
             { label: "Beranda", href: "/" },
             { label: "Kesiswaan", href: "/info-peserta-didik" },
@@ -233,7 +233,7 @@ const InfoSPMB = () => {
           ]}
         />
         <div className="bg-white rounded-lg shadow-sm mb-8">
-          <div className="grid sm:grid-cols-2 grid-cols-1 border">
+          <div className="grid sm:grid-cols-2 grid-cols-1 border mt-12">
             <img
               src={spnmb}
               alt="Logo Jakarta"
@@ -246,7 +246,7 @@ const InfoSPMB = () => {
             />
           </div>
 
-          <h2 className="text-3xl font-bold text-black my-8 text-center">
+          <h2 className="text-3xl font-bold text-black py-10 my-8 text-center">
             MEKANISME SISTEM PENERIMAAN MURID BARU <br />
             BERSAMA SMP NEGERI 244 JAKARTA
           </h2>

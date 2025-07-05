@@ -6,13 +6,14 @@ import {
   ButtonBack,
   ButtonNext,
   Dot,
+  DotGroup
 } from "pure-react-carousel";
 import "pure-react-carousel/dist/react-carousel.es.css";
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const FasilitasCard = ({ title, image, logo }) => (
-  <div className="bg-white rounded-lg shadow-lg overflow-hidden mx-2 h-80">
+  <div className="bg-white rounded-none shadow-lg overflow-hidden mx-2 h-80">
     <div className="relative h-56">
       <img src={image} alt={title} className="w-full h-full object-cover" />
       {logo && (
@@ -54,12 +55,12 @@ const FasilitasSection = ({ facilities }) => {
   }, []);
 
   return (
-    <section className="py-16 bg-green-700 text-white relative">
+    <section className="py-16 bg-green-800 text-white relative">
       <div className="container mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold mb-4">FASILITAS</h2>
-          <div className="w-20 h-1 bg-yellow-400 mx-auto"></div>
+          <div className="w-32 h-1 bg-yellow-400 mx-auto"></div>
         </div>
 
         <CarouselProvider
@@ -94,7 +95,8 @@ const FasilitasSection = ({ facilities }) => {
               ))}
             </Slider>
           </div>
-
+          
+            
           {/* Dot Indicators */}
           {/* <div className="flex justify-center mt-8 space-x-2">
             {facilities.map((_, index) => (
@@ -108,6 +110,26 @@ const FasilitasSection = ({ facilities }) => {
               />
             ))}
           </div> */}
+
+          <div className="flex justify-center mt-8 space-x-2">
+              <DotGroup
+                className="flex space-x-2"
+                dotNumbers={[0, 1,]}
+                renderDots={({ currentSlide, totalSlides }) =>
+                  Array.from({ length: totalSlides - 2 }, (_, index) => (
+                    <Dot
+                      key={index}
+                      slide={index}
+                      className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                        index === currentSlide
+                          ? "bg-yellow-400"
+                          : "bg-gray-300 hover:bg-gray-400"
+                      }`}
+                    />
+                  ))
+                }
+              />
+            </div>
         </CarouselProvider>
       </div>
 

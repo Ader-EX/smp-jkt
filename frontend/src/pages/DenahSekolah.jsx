@@ -93,6 +93,11 @@ const DenahSekolah = () => {
         ]}
       />
 
+      <h3 className="text-center font-bold text-2xl text-green-800 mb-4">
+          DENAH SEKOLAH
+      </h3>
+      <div className="w-32 h-1 bg-yellow-400 mx-auto mb-8"></div>
+
       {/* Navigation Buttons */}
       <div className="max-w-6xl mx-auto mb-8">
         <div className="flex w-full gap-2 justify-between">

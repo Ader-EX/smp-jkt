@@ -127,9 +127,9 @@ const InfoMutasi = () => {
     <>
       <div className=" px-6 py-10 md:px-20 md:py-16">
         {/* Header */}
-        <div className="mb-8">
+        <div className="-mb-10">
           <PageHeader
-            title="Mutasi"
+            title="Informasi Mutasi"
             breadcrumbs={[
               { label: "Beranda", href: "/" },
               { label: "Kesiswaan", href: "/info-peserta-didik" },

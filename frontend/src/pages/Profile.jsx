@@ -5,8 +5,8 @@ import menanam from "@/assets/banner/menanam.png";
 
 const Profile = () => {
   return (
-    <div className="min-h-screen bg-gray-50 p-6">
-      <div className="max-w-6xl mx-auto">
+    <div className="min-h-screen px-6 py-10 md:px-20 md:py-16">
+      <div className="">
         {/* Header */}
         <PageHeader
           title="Profil Sekolah"
@@ -19,10 +19,10 @@ const Profile = () => {
 
         {/* About Us Section */}
         <div className="mb-8">
-          <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">
+          <h2 className="text-2xl font-bold text-center text-green-800 mb-4">
             TENTANG KAMI
           </h2>
-          <div className="w-16 h-1 bg-yellow-400 mx-auto mb-8"></div>
+          <div className="w-32 h-1 bg-yellow-400 mx-auto mb-8"></div>
 
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="h-96 md:h-[400px] lg:h-[400px]">
@@ -64,26 +64,25 @@ const Profile = () => {
           {/* Brief History */}
           <Card className="h-full">
             <CardHeader className="bg-white text-white">
-              <CardTitle className="text-center text-4xl text-primary-base">
+              <CardTitle className="text-center font-bold text-2xl text-green-800 pb-2">
                 SEJARAH SINGKAT
               </CardTitle>
               <div className="w-12 h-1 bg-yellow-400 mx-auto mt-2"></div>
             </CardHeader>
-            <CardContent className="p-6">
+            <CardContent className="my-4 mx-4">
               <div className="space-y-4 text-gray-700">
                 <p>
-                  Perjalanan berdirinya SMP NEGERI 244 JAKARTA diawali dari
-                  bentuk kelas jauh yang menjadi sebuah pendidikan menuju berkas
-                  dari sekolah- sekolah sebelum:
+                  Perjalanan berdirinya SMP NEGERI 244 JAKARTA diawali dari bentuk kelas 
+                  jauh hingga menjadi satuan pendidikan mandiri. Berikut ringkasan sejarah sekolah:
                 </p>
                 <ul className="space-y-2 list-disc list-inside">
-                  <li>1982 - 1985</li>
-                  <li>SMP Negeri 196 Jakarta</li>
-                  <li>1985</li>
-                  <li>
+                  <li>1982 - 1986</li>
+                  <p>Beroperasi sebagai SMP 114 Kelas Jauh</p>
+                  <li>1986</li>
+                  <p>
                     Berdasarkan Surat Keputusan Kamal No. 0888/0/1985, sekolah
                     resmi menjadi SMP NEGERI 244 JAKARTA
-                  </li>
+                  </p>
                 </ul>
                 <p>
                   Sejak saat itu, sekolah terus berkembang dalam hal fasilitas,
@@ -96,12 +95,12 @@ const Profile = () => {
           {/* Support Facilities */}
           <Card className="h-full">
             <CardHeader className="bg-white text-white">
-              <CardTitle className="text-center text-4xl text-primary-base">
+              <CardTitle className="text-center font-bold text-2xl text-green-800 pb-2">
                 FASILITAS PENUNJANG
               </CardTitle>
               <div className="w-12 h-1 bg-yellow-400 mx-auto mt-2"></div>
             </CardHeader>
-            <CardContent className="p-6">
+            <CardContent className="my-4 mx-4">
               <div className="space-y-4 text-gray-700">
                 <p>
                   Untuk mendukung proses pembelajaran yang optimal, SMP NEGERI
@@ -127,12 +126,12 @@ const Profile = () => {
           {/* Motto */}
           <Card className="h-full">
             <CardHeader className="bg-white text-white">
-              <CardTitle className="text-center text-4xl text-primary-base">
+              <CardTitle className="text-center font-bold text-2xl text-green-800 pb-2">
                 MOTTO
               </CardTitle>
               <div className="w-12 h-1 bg-yellow-400 mx-auto mt-2"></div>
             </CardHeader>
-            <CardContent className="p-6 flex items-center justify-center">
+            <CardContent className="flex items-center justify-center my-4 mx-4">
               <p className="text-center text-gray-700 font-medium text-lg">
                 Unggul Prestasi, Luhur Jati Diri, Tanggap Teknologi
               </p>
@@ -142,12 +141,12 @@ const Profile = () => {
           {/* Slogan */}
           <Card className="h-full">
             <CardHeader className="bg-white text-white">
-              <CardTitle className="text-center text-4xl text-primary-base">
+              <CardTitle className="text-center font-bold text-2xl text-green-800 pb-2">
                 SLOGAN
               </CardTitle>
               <div className="w-12 h-1 bg-yellow-400 mx-auto mt-2"></div>
             </CardHeader>
-            <CardContent className="p-6 flex items-center justify-center">
+            <CardContent className="flex items-center justify-center my-4 mx-4">
               <p className="text-center text-gray-700 font-medium text-lg">
                 IMPIAN (Iman, Rajin, dan Nyaman)
               </p>

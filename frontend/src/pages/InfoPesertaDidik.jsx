@@ -54,9 +54,14 @@ const InfoPesertaDidik = () => {
       />
 
       {/* Controls */}
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mb-6">
+      <div className="mt-10 font-semibold">
+        <h3>Daftar Nama Siswa Kelas 7A</h3>
+        <h3>Tahun Pelajaran 2024-2025</h3>
+        <h3>Wali Kelas : Sarpiatun, S.Pd</h3>
+      </div>
+      <div className="flex flex-wrap justify-between items-center gap-4 mb-6">
         {/* Show Entries Selector */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 mt-4">
           <label className="text-sm whitespace-nowrap">Show</label>
           <select
             value={itemsPerPage}
@@ -73,15 +78,15 @@ const InfoPesertaDidik = () => {
         </div>
 
         {/* Kelas Selector */}
-        <div className="flex items-center gap-2">
-          <label className="text-sm whitespace-nowrap">Kelas:</label>
+        <div className="flex items-center gap-2 ml-auto mt-4">
+          <label className="text-sm whitespace-nowrap">Pilih Kelas:</label>
           <select
             value={selectedClass || ""}
             onChange={(e) => {
               setSelectedClass(e.target.value);
               setCurrentPage(1);
             }}
-            className="border rounded px-2 py-1 text-sm w-full"
+            className="border rounded px-2 py-1 text-sm w-full "
           >
             {kelasList.map((k) => (
               <option key={k.id} value={k.id}>
@@ -92,11 +97,13 @@ const InfoPesertaDidik = () => {
         </div>
 
         {/* Search Input */}
+        <div className="justify-start sm:justify-end mt-4">
         <div className="flex items-center gap-2">
+          <h6>Cari:</h6>
           <Input
             type="text"
             placeholder="Cari nama siswa..."
-            className="border rounded px-3 py-1 text-sm w-full"
+            className="border rounded px-3 py-1 text-sm w-64"
             value={searchTerm}
             onChange={(e) => {
               setSearchTerm(e.target.value);
@@ -104,11 +111,13 @@ const InfoPesertaDidik = () => {
             }}
           />
         </div>
+        </div>
+         
 
         {/* Search Button */}
-        <div className="flex justify-start sm:justify-end">
+        {/*<div className="flex justify-start sm:justify-end">
           <Button onClick={() => setCurrentPage(1)}>Cari</Button>
-        </div>
+        </div>*/}
       </div>
 
       {/* Table */}
@@ -117,11 +126,11 @@ const InfoPesertaDidik = () => {
           <thead>
             <tr className="bg-yellow-400">
               <th className="border px-4 py-2">No</th>
-              <th className="border px-4 py-2">Nama</th>
+              <th className="border px-4 py-2">Nama Peserta Didik</th>
               <th className="border px-4 py-2">NIS</th>
               <th className="border px-4 py-2">Jenis Kelamin</th>
               <th className="border px-4 py-2">Agama</th>
-              <th className="border px-4 py-2">Kelas</th>
+              <th className="border px-4 py-2">Asal Kelas</th>
             </tr>
           </thead>
           <tbody>

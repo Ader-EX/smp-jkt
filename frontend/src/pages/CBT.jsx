@@ -23,7 +23,7 @@ const CBT = () => {
       <div className="w-full lg:w-1/2 flex flex-col justify-center px-6 py-12 md:px-12 lg:p-16 bg-white">
         <div className="mb-6 flex flex-col w-full  ">
           <a href="/">
-            <button className=" text-left sm:ml-[12rem] ml-10  mb-10 flex items-center text-gray-600 hover:text-gray-800 transition-colors">
+            <button className=" text-left sm:ml-[0rem] ml-10  mb-10 flex items-center text-gray-600 hover:text-gray-800 transition-colors">
               <ChevronLeft className="w-5 h-5 mr-1" />
               <span className="text-sm">Kembali</span>
             </button>

@@ -12,8 +12,8 @@ const FAQSection = () => {
         <p>
           Silahkan klik{" "}
           <a
-            href="https://www.smpn167jakarta.sch.id/pendaftaran-dtks-2022/"
-            className="underline"
+            href="https://kjp.jakarta.go.id/"
+            className="underline text-green-600"
           >
             di sini
           </a>{" "}
@@ -28,8 +28,8 @@ const FAQSection = () => {
         <p>
           Silahkan klik{" "}
           <a
-            href="https://www.smpn167jakarta.sch.id/pendaftaran-dtks-2022/"
-            className="underline"
+            href="http://localhost:5173/info-spmb"
+            className="underline text-green-600"
           >
             di sini
           </a>{" "}
@@ -45,8 +45,8 @@ const FAQSection = () => {
         <p>
           Silahkan klik{" "}
           <a
-            href="https://www.smpn167jakarta.sch.id/pendaftaran-dtks-2022/"
-            className="underline"
+            href="http://localhost:5173/info-mutasi"
+            className="underline text-green-600"
           >
             di sini
           </a>{" "}
@@ -61,8 +61,8 @@ const FAQSection = () => {
         <p>
           Silahkan klik{" "}
           <a
-            href="https://www.smpn167jakarta.sch.id/pendaftaran-dtks-2022/"
-            className="underline"
+            href="https://kjp.jakarta.go.id/"
+            className="underline text-green-600"
           >
             di sini
           </a>{" "}
@@ -77,8 +77,8 @@ const FAQSection = () => {
         <p>
           Silahkan klik{" "}
           <a
-            href="https://www.smpn167jakarta.sch.id/pendaftaran-dtks-2022/"
-            className="underline"
+            href="http://localhost:5173/info-spmb"
+            className="underline text-green-600"
           >
             di sini
           </a>{" "}
@@ -94,8 +94,8 @@ const FAQSection = () => {
         <p>
           Silahkan klik{" "}
           <a
-            href="https://www.smpn167jakarta.sch.id/pendaftaran-dtks-2022/"
-            className="underline"
+            href="http://localhost:5173/info-mutasi"
+            className="underline text-green-600"
           >
             di sini
           </a>{" "}
@@ -113,7 +113,7 @@ const FAQSection = () => {
   };
 
   return (
-    <div className="max-w-6xl mx-auto p-6  bg-gra">
+    <div className="max-w-6xl mx-auto p-6  bg-gray">
       {/* Header */}
       <div className="mb-8">
         <div className="flex items-center mb-2">
@@ -122,7 +122,7 @@ const FAQSection = () => {
             Pertanyaan yang Sering Diajukan
           </p>
         </div>
-        <h2 className="text-3xl font-bold text-gray-800 ml-5">FAQ</h2>
+        <h2 className="text-2xl md:text-3xl font-bold text-green-800 mb-8">FAQ</h2>
       </div>
 
       {/* FAQ Items */}
@@ -132,7 +132,7 @@ const FAQSection = () => {
           {faqData.slice(0, Math.ceil(faqData.length / 2)).map((item) => (
             <div
               key={item.id}
-              className="border border-gray-300 rounded-lg overflow-hidden"
+              className="border border-gray-300 rounded-none overflow-hidden"
             >
               <button
                 onClick={() => toggleExpanded(item.id)}
@@ -163,7 +163,7 @@ const FAQSection = () => {
           {faqData.slice(Math.ceil(faqData.length / 2)).map((item) => (
             <div
               key={item.id}
-              className="border border-gray-300 rounded-lg overflow-hidden"
+              className="border border-gray-300 rounded-none overflow-hidden"
             >
               <button
                 onClick={() => toggleExpanded(item.id)}

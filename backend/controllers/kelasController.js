@@ -43,17 +43,30 @@ exports.getById = async (req, res, next) => {
       },
     });
 
-    // Fetch paginated siswa
-    const siswaList = await Siswa.findAll({
+    const siswaListRaw = await Siswa.findAll({
       where: {
         kelasId: req.params.id,
         nama: {
           [Op.like]: `%${search}%`,
         },
       },
+      include: [
+        {
+          model: Kelas,
+          attributes: ["namaKelas"],
+        },
+      ],
       limit,
       offset,
+      raw: true,
+      nest: true,
     });
+
+    // Fetch paginated siswa
+    const siswaList = siswaListRaw.map((siswa) => ({
+      ...siswa,
+      kelasId: siswa.Kela.namaKelas,
+    }));
 
     const totalPages = Math.ceil(totalData / limit);
 

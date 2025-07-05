@@ -34,10 +34,10 @@ const StaffTU = () => {
   return (
     <div className="min-h-screen px-6 py-10 md:px-20 md:py-16">
       <PageHeader
-        title="Daftar Staff"
+        title="Daftar Staff Tata Usaha"
         breadcrumbs={[
           { label: "Beranda", href: "/" },
-          { label: "Staff", href: "/staff" },
+          { label: "Staff Tata Usaha", href: "/staff" },
         ]}
       />
 
@@ -62,7 +62,9 @@ const StaffTU = () => {
           <label className="text-sm">entries</label>
         </div>
 
+        <div className="w-full flex justify-end items-center mt-4">
         <div className="flex items-center gap-4">
+          <h6>Cari:</h6>
           <Input
             type="text"
             placeholder="Cari nama staff..."
@@ -73,8 +75,9 @@ const StaffTU = () => {
               setCurrentPage(1);
             }}
           />
-          <Button onClick={() => setCurrentPage(1)}>Cari</Button>
+          
         </div>
+      </div>
       </div>
 
       {/* Table */}
@@ -83,11 +86,11 @@ const StaffTU = () => {
           <thead>
             <tr className="bg-yellow-400">
               <th className="border px-4 py-2">No</th>
-              <th className="border px-4 py-2">Foto</th>
               <th className="border px-4 py-2">Nama Staff</th>
               <th className="border px-4 py-2">NIP</th>
               <th className="border px-4 py-2">Status</th>
               <th className="border px-4 py-2">Jabatan</th>
+              <th className="border px-4 py-2">Foto</th>
             </tr>
           </thead>
           <tbody>
@@ -96,6 +99,11 @@ const StaffTU = () => {
                 <td className="border px-4 py-2 text-sm">
                   {(currentPage - 1) * pageSize + idx + 1}
                 </td>
+                
+                <td className="border px-4 py-2 text-sm">{staff.nama}</td>
+                <td className="border px-4 py-2 text-sm">{staff.nip}</td>
+                <td className="border px-4 py-2 text-sm">{staff.status}</td>
+                <td className="border px-4 py-2 text-sm">{staff.jabatan}</td>
                 <td className="border px-4 py-2 text-sm">
                   {staff.photo && (
                     <img
@@ -105,11 +113,7 @@ const StaffTU = () => {
                     />
                   )}
                 </td>
-
-                <td className="border px-4 py-2 text-sm">{staff.nama}</td>
-                <td className="border px-4 py-2 text-sm">{staff.nip}</td>
-                <td className="border px-4 py-2 text-sm">{staff.status}</td>
-                <td className="border px-4 py-2 text-sm">{staff.jabatan}</td>
+                
               </tr>
             ))}
           </tbody>

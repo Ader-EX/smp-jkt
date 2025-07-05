@@ -36,10 +36,10 @@ const Fasilitas = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8 px-4">
-      <div className="max-w-6xl mx-auto">
+    <div className="min-h-screen px-6 py-10 md:px-20 md:py-16">
+      <div className="">
         <PageHeader
-          title="Fasilitas"
+          title="Fasilitas Sekolah"
           breadcrumbs={[
             { label: "Beranda", href: "/" },
             { label: "Profil", href: "/profil-sekolah" },
@@ -48,17 +48,17 @@ const Fasilitas = () => {
         />
 
         <div className="text-center mb-12">
-          <div className="inline-block bg-yellow-400 text-black px-3 py-1 text-sm font-semibold mb-4">
-            Tentang
-          </div>
-          <h1 className="text-3xl font-bold text-gray-800 mb-2">
-            Fasilitas Sekolah
+          
+          <h1 className="text-3xl font-bold text-gray-800 mb-2">  {/* AWALNYA ADA FASILITAS SEKOLAH */}
+            
           </h1>
-          <div className="w-16 h-1 bg-yellow-400 mx-auto mb-8"></div>
-          <h2 className="text-2xl font-semibold text-gray-700 mb-8">
+          
+          <h2 className="text-2xl font-bold text-green-800 mb-4">
             FASILITAS UNGGULAN
           </h2>
+          <div className="w-32 h-1 bg-yellow-400 mx-auto mb-8"></div>
         </div>
+        
 
         {/* First Row - 2 Gedung Sekolah */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
