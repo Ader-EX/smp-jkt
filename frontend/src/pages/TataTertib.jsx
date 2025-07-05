@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import PageHeader from "@/components/ui/PageHeader";
 import jakarta from "@/assets/jakarta.png";
+import { Button } from "@/components/ui/button";
 
 const TataTertib = () => {
   const [expandedSections, setExpandedSections] = useState({});
@@ -217,9 +218,9 @@ Kode Etik Peserta Didik SMP Negeri merupakan standar perilaku yang mencerminkan 
             key={section.id}
             className="bg-white rounded-lg shadow-sm overflow-hidden"
           >
-            <button
+            <Button
               onClick={() => toggleSection(section.id)}
-              className="w-full bg-green-700 hover:bg-green-800 text-white px-6 py-4 flex items-center justify-between transition-colors duration-200"
+              className="w-full bg-primary-base hover:bg-primary-base text-white px-6 py-4 flex items-center justify-between transition-colors duration-200"
             >
               <span className="font-medium text-left">{section.title}</span>
               <div className="flex-shrink-0 ml-4">
@@ -229,10 +230,10 @@ Kode Etik Peserta Didik SMP Negeri merupakan standar perilaku yang mencerminkan 
                   <ChevronDown className="w-5 h-5" />
                 )}
               </div>
-            </button>
+            </Button>
             {expandedSections[section.id] && (
               <div className="px-6 py-4 bg-gray-50 border-t border-gray-200">
-                <div className="text-gray-700 whitespace-pre-line">
+                <div className="text-primary-bgText whitespace-pre-line">
                   {section.content}
                 </div>
               </div>
@@ -242,12 +243,12 @@ Kode Etik Peserta Didik SMP Negeri merupakan standar perilaku yang mencerminkan 
       </div>
 
       {/* Scroll to top button */}
-      <button
+      <Button
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        className="fixed bottom-6 right-6 bg-gray-600 hover:bg-gray-700 text-white p-3 rounded-full shadow-lg transition-colors duration-200"
+        className="fixed bottom-6 right-6 bg-gray-600 hover:bg-primary-bgText text-white p-3 rounded-full shadow-lg transition-colors duration-200"
       >
         <ChevronUp className="w-5 h-5" />
-      </button>
+      </Button>
     </div>
   );
 };

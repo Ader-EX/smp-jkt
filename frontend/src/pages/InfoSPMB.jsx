@@ -6,6 +6,7 @@ import linimasa from "@/assets/linimasa.png";
 import jalur from "@/assets/ppdb.png";
 
 import spnmb from "@/assets/spmb-banner.png";
+import { Button } from "@/components/ui/button";
 
 const InfoSPMB = () => {
   const [expandedSections, setExpandedSections] = useState({});
@@ -62,7 +63,7 @@ const InfoSPMB = () => {
               href="https://example.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-600 underline"
+              className="text-neutral-blue underline"
             >
               Klik di sini{" "}
             </a>{" "}
@@ -193,7 +194,7 @@ const InfoSPMB = () => {
               href="https://spmb.jakarta.go.id"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-600 underline"
+              className="text-neutral-blue underline"
             >
               Website SPMB Jakarta
             </a>
@@ -260,9 +261,9 @@ const InfoSPMB = () => {
             key={section.id}
             className="bg-white rounded-lg shadow-sm overflow-hidden"
           >
-            <button
+            <Button
               onClick={() => toggleSection(section.id)}
-              className="w-full bg-primary-base hover:bg-green-800 transition-all text-white px-6 py-4 flex items-center justify-between  duration-300"
+              className="w-full bg-primary-base hover:bg-primary-base transition-all text-white px-6 py-4 flex items-center justify-between  duration-300"
             >
               <span className="font-medium text-left">{section.title}</span>
               <div className="flex-shrink-0 ml-4">
@@ -272,10 +273,10 @@ const InfoSPMB = () => {
                   <ChevronDown className="w-5 h-5" />
                 )}
               </div>
-            </button>
+            </Button>
             {expandedSections[section.id] && (
               <div className="px-6 py-4 bg-gray-50 border-t border-gray-200">
-                <div className="text-gray-700 whitespace-pre-line overflow-x-auto">
+                <div className="text-primary-bgText whitespace-pre-line overflow-x-auto">
                   {section.content}
                 </div>
               </div>
@@ -285,12 +286,12 @@ const InfoSPMB = () => {
       </div>
 
       {/* Scroll to top button */}
-      <button
+      <Button
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        className="fixed bottom-6 right-6 bg-gray-600 hover:bg-gray-700 text-white p-3 rounded-full shadow-lg transition-colors duration-200"
+        className="fixed bottom-6 right-6 bg-gray-600 hover:bg-primary-bgText text-white p-3 rounded-full shadow-lg transition-colors duration-200"
       >
         <ChevronUp className="w-5 h-5" />
-      </button>
+      </Button>
     </div>
   );
 };

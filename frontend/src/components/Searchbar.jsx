@@ -6,6 +6,7 @@ import {
   RiEyeLine,
 } from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
+import { Button } from "./ui/button";
 
 const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -91,53 +92,38 @@ const SearchBar = () => {
   };
 
   return (
-<<<<<<< HEAD
     <div className="mx-10 w-full max-w-2xl relative">
-=======
-    <div className="w-full max-w-2xl mx-auto relative">
->>>>>>> 0104e040fae8c08e08f7c18fa18295e5b95809e0
       <div className="relative">
-        <div className="flex items-center border-2 border-gray-300 rounded-lg overflow-hidden bg-white shadow-sm focus-within:border-blue-500 focus-within:shadow-md transition-all duration-200">
+        <div className="flex items-center  rounded-lg overflow-hidden bg-white shadow-sm focus-within:border-neutral-blue focus-within:shadow-md transition-all duration-200">
           <div className="flex-1 relative">
             <input
               type="text"
               value={searchTerm}
               onChange={handleSearchChange}
               placeholder="Cari berita atau pengumuman..."
-<<<<<<< HEAD
-              className="w-64 px-4 py-2 text-gray-700 focus:outline-none text-sm"
-=======
-              className="w-full px-4 py-3 text-gray-700 focus:outline-none text-sm md:text-base"
->>>>>>> 0104e040fae8c08e08f7c18fa18295e5b95809e0
+              className="w-64 px-4 py-2 text-primary-bgText focus:outline-none text-sm"
             />
             {isLoading && (
               <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
-                <div className="animate-spin rounded-full h-4 w-4 border-2 border-blue-500 border-t-transparent"></div>
+                <div className="animate-spin rounded-full h-4 w-4 border-2 border-neutral-blue border-t-transparent"></div>
               </div>
             )}
           </div>
 
           {searchTerm && (
-            <button
-              onClick={clearSearch}
-              className="p-3 text-gray-400 hover:text-gray-600 transition-colors"
-            >
+            <Button onClick={clearSearch} variant="outline">
               <RiCloseLine className="text-xl" />
-            </button>
+            </Button>
           )}
 
-          <button
+          <Button
             onClick={() =>
               searchTerm.trim().length > 5 && performSearch(searchTerm)
             }
-<<<<<<< HEAD
-            className="bg-green-800 hover:bg-green-700 text-white px-4 md:px-6 py-4 transition-colors duration-200"
-=======
-            className="bg-green-600 hover:bg-green-700 text-white px-4 md:px-6 py-3 transition-colors duration-200"
->>>>>>> 0104e040fae8c08e08f7c18fa18295e5b95809e0
+            className="bg-primary-base hover:bg-primary-base text-white px-4 md:px-6 py-4 transition-colors duration-200"
           >
             <RiSearchLine className="text-xl" />
-          </button>
+          </Button>
         </div>
       </div>
 
@@ -150,7 +136,7 @@ const SearchBar = () => {
           )}
 
           {searchResults.length === 0 && !isLoading && !error && (
-            <div className="p-4 text-gray-500 text-center">
+            <div className="p-4 text-primary-bgText text-center">
               <p>Tidak ada hasil ditemukan untuk &quot;{searchTerm}&quot;</p>
             </div>
           )}
@@ -173,10 +159,10 @@ const SearchBar = () => {
                 />
 
                 <div className="flex-1">
-                  <h3 className="font-semibold text-gray-800 text-sm md:text-base">
+                  <h3 className="font-semibold text-primary-bgText text-sm md:text-base">
                     {item.nama || item.judul || "Judul tidak tersedia"}
                   </h3>
-                  <div className="flex items-center gap-4 mt-2 text-xs text-gray-500">
+                  <div className="flex items-center gap-4 mt-2 text-xs text-primary-bgText">
                     <div className="flex items-center gap-1">
                       <RiCalendarLine />
                       <span>{formatDate(item.createdAt)}</span>
@@ -188,7 +174,7 @@ const SearchBar = () => {
                       </div>
                     )}
                     {item.tags && (
-                      <span className="ml-auto bg-blue-100 text-blue-600 px-2 py-0.5 rounded text-xs">
+                      <span className="ml-auto bg-neutral-blue text-neutral-blue px-2 py-0.5 rounded text-xs">
                         {item.tags}
                       </span>
                     )}

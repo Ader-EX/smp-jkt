@@ -1,3 +1,68 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  /* Headings */
+  h1 {
+    @apply text-h1 font-bold   leading-tight;
+  }
+
+  h2 {
+    @apply text-h2 font-semibold  leading-snug;
+  }
+
+  h3 {
+    @apply text-[22px] font-semibold  leading-snug;
+  }
+
+  h4 {
+    @apply text-[20px] font-medium  leading-snug;
+  }
+
+  h5 {
+    @apply text-[16px] font-medium  leading-snug;
+  }
+
+  h6 {
+    @apply text-[14px] font-medium  leading-snug;
+  }
+
+  /* Paragraphs */
+
+  /* Links */
+  a {
+    @apply text-link    transition-colors;
+  }
+
+  /* Buttons */
+  button {
+    @apply text-button font-medium px-4 py-2 rounded-md    transition-colors;
+  }
+
+  /* Lists */
+  ul {
+    @apply text-body;
+  }
+
+  ol {
+    @apply text-body;
+  }
+
+  /* Inputs */
+  input,
+  textarea,
+  select {
+    @apply border border-input rounded-md px-3 py-2 text-sm text-foreground bg-background focus:outline-none focus:ring-2 focus:ring-ring;
+  }
+
+  /* Blockquotes */
+  blockquote {
+    @apply border-l-4   italic;
+  }
+
+  /* Code */
+  code {
+    @apply font-mono text-sm  px-1 py-0.5 rounded;
+  }
+}

@@ -1,12 +1,9 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
+import { Button } from "./ui/button";
 
 const NewsCard = ({ id, date, title, images }) => (
-<<<<<<< HEAD
   <div className="bg-white rounded-none shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-=======
-  <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
->>>>>>> 0104e040fae8c08e08f7c18fa18295e5b95809e0
     <div className="relative h-64 bg-gray-100">
       <div className="grid grid-cols-2 gap-1 h-full p-2">
         {images.slice(0, 4).map((image, index) => (
@@ -26,25 +23,15 @@ const NewsCard = ({ id, date, title, images }) => (
       </div>
     </div>
     <div className="p-6">
-      <div className="text-sm text-gray-500 mb-2">{date}</div>
-      <h3 className="text-lg font-semibold text-gray-800 mb-4 leading-tight">
+      <div className="text-sm text-primary-bgText mb-2">{date}</div>
+      <h3 className="text-lg font-semibold text-primary-bgText mb-4 leading-tight">
         {title}
       </h3>
-<<<<<<< HEAD
       <div className="flex justify-end">
-      <a href={`/berita/${id}`}>
-        <button className="bg-green-800 hover:bg-green-700 text-white px-6 py-2 rounded-none text-sm font-medium transition-colors duration-300">
-          Baca Selengkapnya
-        </button>
-      </a>
+        <a href={`/berita/${id}`}>
+          <Button>Baca Selengkapnya</Button>
+        </a>
       </div>
-=======
-      <a href={`/berita/${id}`}>
-        <button className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded text-sm font-medium transition-colors duration-300">
-          Baca Selengkapnya
-        </button>
-      </a>
->>>>>>> 0104e040fae8c08e08f7c18fa18295e5b95809e0
     </div>
   </div>
 );
@@ -80,17 +67,10 @@ const BeritaTerbaruSection = () => {
     <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-6">
         <div className="text-center mb-12">
-<<<<<<< HEAD
-          <h2 className="text-3xl font-bold text-green-800 mb-4">
+          <h2 className="text-3xl font-bold text-primary-base mb-4">
             BERITA TERBARU
           </h2>
-          <div className="w-32 h-1 bg-yellow-400 mx-auto"></div>
-=======
-          <h2 className="text-3xl font-bold text-green-700 mb-2">
-            BERITA TERBARU
-          </h2>
-          <div className="w-20 h-1 bg-yellow-400 mx-auto"></div>
->>>>>>> 0104e040fae8c08e08f7c18fa18295e5b95809e0
+          <div className="w-32 h-1 bg-secondary-hover mx-auto"></div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
@@ -107,9 +87,10 @@ const BeritaTerbaruSection = () => {
 
         <div className="text-center">
           <a href="/berita">
-            <button className="border-2 border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white px-8 py-3 font-medium transition-colors duration-300">
+            {/* <button className="border-2 border-primary-bgText text-primary-bgText hover:bg-primary-bgText hover:text-white px-8 py-3 font-medium transition-colors duration-300">
               Lihat Berita Lainnya
-            </button>
+            </button> */}
+            <Button>Lihat Berita Lainnya</Button>
           </a>
         </div>
       </div>

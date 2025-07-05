@@ -55,9 +55,9 @@ const InfoPesertaDidik = () => {
 
       {/* Controls */}
       <div className="mt-10 font-semibold">
-        <h3>Daftar Nama Siswa Kelas 7A</h3>
-        <h3>Tahun Pelajaran 2024-2025</h3>
-        <h3>Wali Kelas : Sarpiatun, S.Pd</h3>
+        <h4>Daftar Nama Siswa Kelas 7A</h4>
+        <h4>Tahun Pelajaran 2024-2025</h4>
+        <h4>Wali Kelas : Sarpiatun, S.Pd</h4>
       </div>
       <div className="flex flex-wrap justify-between items-center gap-4 mb-6">
         {/* Show Entries Selector */}
@@ -98,21 +98,20 @@ const InfoPesertaDidik = () => {
 
         {/* Search Input */}
         <div className="justify-start sm:justify-end mt-4">
-        <div className="flex items-center gap-2">
-          <h6>Cari:</h6>
-          <Input
-            type="text"
-            placeholder="Cari nama siswa..."
-            className="border rounded px-3 py-1 text-sm w-64"
-            value={searchTerm}
-            onChange={(e) => {
-              setSearchTerm(e.target.value);
-              setCurrentPage(1);
-            }}
-          />
+          <div className="flex items-center gap-2">
+            <h6>Cari:</h6>
+            <Input
+              type="text"
+              placeholder="Cari nama siswa..."
+              className="border rounded px-3 py-1 text-sm w-64"
+              value={searchTerm}
+              onChange={(e) => {
+                setSearchTerm(e.target.value);
+                setCurrentPage(1);
+              }}
+            />
+          </div>
         </div>
-        </div>
-         
 
         {/* Search Button */}
         {/*<div className="flex justify-start sm:justify-end">
@@ -124,7 +123,7 @@ const InfoPesertaDidik = () => {
       <div className="overflow-x-auto bg-white rounded-lg shadow-sm">
         <table className="w-full border-collapse">
           <thead>
-            <tr className="bg-yellow-400">
+            <tr className="bg-secondary-hover">
               <th className="border px-4 py-2">No</th>
               <th className="border px-4 py-2">Nama Peserta Didik</th>
               <th className="border px-4 py-2">NIS</th>

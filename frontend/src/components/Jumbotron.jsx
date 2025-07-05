@@ -22,16 +22,16 @@ const Jumbotron = ({
         <div className="text-white text-sm uppercase tracking-wider mb-0">
           {welcomeText}
         </div>
-        <h1 className="text-2xl font-bold text-white sm:text-5xl lg:text-6xl mt-0 max-w-[60%] leading-loose">
-          {title}
-        </h1>
+        {/* <h1 className="text-2xl font-bold text-white sm:text-5xl lg:text-6xl mt-0 max-w-[60%] leading-loose">
+         */}
+        <h1 className="lg:text-5xl text-2xl text-white">{title}</h1>
         <p className="text-gray-200 text-sm sm:text-base max-w-full sm:max-w-[70%]">
           {description || ""}
         </p>
         {buttonText && buttonLink && (
           <a
             href={buttonLink}
-            className="inline-flex items-center justify-center px-6 py-3 text-sm font-medium text-white bg-green-500 rounded-lg hover:bg-green-600 mt-4"
+            className="inline-flex items-center justify-center px-6 py-3 text-sm font-medium text-white bg-primary-base rounded-lg hover:bg-primary-base mt-4"
           >
             {buttonText}
           </a>

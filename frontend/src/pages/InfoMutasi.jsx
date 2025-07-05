@@ -5,6 +5,7 @@ import PageHeader from "@/components/ui/PageHeader";
 import spnmb from "@/assets/spmb-banner.png";
 import samplePDF from "@/assets/sample.pdf";
 import bannerMutasi from "@/assets/banner/mutasi.png";
+import { Button } from "@/components/ui/button";
 
 const InfoMutasi = () => {
   const [expandedSections, setExpandedSections] = useState({});
@@ -104,7 +105,7 @@ const InfoMutasi = () => {
           <h3 className="text-lg font-semibold">
             Pengumuman Jadwal Mutasi tahun pelajaran 2024/2025
           </h3>
-          <p className="text-gray-700 mt-2 text-justify leading-relaxed">
+          <p className="text-primary-bgText mt-2 text-justify leading-relaxed">
             Assalamualaikum Warahmatullahi Wabarakatuh, salam sejahtera kepada
             bapak dan ibu orang tua murid. Dengan kata ini kami akan sampaikan
             informasi terkait mutasi pada tahun pelajaran 2024/2025.
@@ -153,10 +154,7 @@ const InfoMutasi = () => {
               key={section.id}
               className="bg-white rounded-lg shadow-sm overflow-hidden"
             >
-              <button
-                onClick={() => toggleSection(section.id)}
-                className="w-full bg-primary-base hover:bg-green-800 transition-all text-white px-6 py-4 flex items-center justify-between  duration-300"
-              >
+              <Button onClick={() => toggleSection(section.id)}>
                 <span className="font-medium text-left">{section.title}</span>
                 <div className="flex-shrink-0 ml-4">
                   {expandedSections[section.id] ? (
@@ -165,10 +163,10 @@ const InfoMutasi = () => {
                     <ChevronDown className="w-5 h-5" />
                   )}
                 </div>
-              </button>
+              </Button>
               {expandedSections[section.id] && (
                 <div className="px-6 py-4 bg-gray-50 border-t border-gray-200">
-                  <div className="text-gray-700 whitespace-pre-line overflow-x-auto">
+                  <div className="text-primary-bgText whitespace-pre-line overflow-x-auto">
                     {section.content}
                   </div>
                 </div>

@@ -2,9 +2,10 @@
 
 import { useState } from "react";
 import ReactPaginate from "react-paginate";
+import { Card } from "./ui/card";
 
 export const NewsCard = ({ id, title, description, date, image }) => (
-  <div className="flex flex-col bg-white border rounded-lg w-full">
+  <Card>
     <img
       src={image}
       alt={title}
@@ -16,14 +17,14 @@ export const NewsCard = ({ id, title, description, date, image }) => (
           {title}
         </h4>
         <p
-          className="text-sm text-gray-700 mb-4 line-clamp-3"
+          className="text-sm text-primary-bgText mb-4 line-clamp-3"
           title={description}
         >
           {description}
         </p>
       </div>
       <div className="mt-auto">
-        <div className="text-sm text-gray-500 mb-2">{date}</div>
+        <div className="text-sm text-primary-bgText mb-2">{date}</div>
         <a
           href={`/product/${id}`}
           className="text-[#3A55B4] hover:font-bold font-semibold flex items-center gap-x-1"
@@ -47,7 +48,7 @@ export const NewsCard = ({ id, title, description, date, image }) => (
         </a>
       </div>
     </div>
-  </div>
+  </Card>
 );
 
 export const NewsCardGrid = ({

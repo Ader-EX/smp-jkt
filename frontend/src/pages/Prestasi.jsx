@@ -36,11 +36,11 @@ const Prestasi = () => {
           <h2 className="text-2xl font-bold text-center text-primary-base mb-4">
             PRESTASI AKADEMIK
           </h2>
-          <div className="w-32 h-1 bg-yellow-400 mx-auto mb-8"></div>
+          <div className="w-32 h-1 bg-secondary-hover mx-auto mb-8"></div>
           <h3 className="text-lg font-semibold">
             Prestasi akademik tahun pelajaran 2024/2025
           </h3>
-          <p className="text-gray-700 mt-2 text-justify leading-relaxed">
+          <p className="text-primary-bgText mt-2 text-justify leading-relaxed">
             Assalamualaikum Warahmatullahi Wabarakatuh, salam sejahtera kepada
             bapak dan ibu orang tua murid. Dengan kata ini kami akan sampaikan
             informasi terkait prestasi putra dan putri kami pada tahun pelajaran
@@ -60,11 +60,11 @@ const Prestasi = () => {
           <h2 className="text-2xl font-bold text-center text-primary-base mb-4">
             PRESTASI NON AKADEMIK
           </h2>
-          <div className="w-32 h-1 bg-yellow-400 mx-auto mb-8"></div>
+          <div className="w-32 h-1 bg-secondary-hover mx-auto mb-8"></div>
           <h3 className="text-lg font-semibold">
             Prestasi akademik tahun pelajaran 2024/2025
           </h3>
-          <p className="text-gray-700 mt-2 mb-6 text-justify leading-relaxed">
+          <p className="text-primary-bgText mt-2 mb-6 text-justify leading-relaxed">
             Assalamualaikum Warahmatullahi Wabarakatuh, salam sejahtera kepada
             bapak dan ibu orang tua murid. Dengan kata ini kami akan sampaikan
             informasi terkait prestasi putra dan putri kami pada tahun pelajaran

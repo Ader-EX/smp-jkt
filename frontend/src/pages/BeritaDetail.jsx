@@ -74,8 +74,8 @@ const BeritaDetail = () => {
             {news.title}
           </h1>
           <div className="flex w-full justify-between">
-            <p className="text-sm text-gray-500 mb-6">{news.date}</p>
-            <p className="text-lg text-gray-800">{news.place}</p>
+            <p className="text-sm text-primary-bgText mb-6">{news.date}</p>
+            <p className="text-lg text-primary-bgText">{news.place}</p>
           </div>
           <img
             src={news.photo}
@@ -83,7 +83,7 @@ const BeritaDetail = () => {
             className="w-full object-cover rounded-lg mb-6"
           />
 
-          <p className="text-lg text-gray-800 text-justify whitespace-pre-line">
+          <p className="text-lg text-primary-bgText text-justify whitespace-pre-line">
             {news.content}
           </p>
         </div>

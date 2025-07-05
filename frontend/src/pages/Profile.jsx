@@ -19,10 +19,10 @@ const Profile = () => {
 
         {/* About Us Section */}
         <div className="mb-8">
-          <h2 className="text-2xl font-bold text-center text-green-800 mb-4">
+          <h2 className="text-2xl font-bold text-center text-primary-base mb-4">
             TENTANG KAMI
           </h2>
-          <div className="w-32 h-1 bg-yellow-400 mx-auto mb-8"></div>
+          <div className="w-32 h-1 bg-secondary-hover mx-auto mb-8"></div>
 
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="h-96 md:h-[400px] lg:h-[400px]">
@@ -32,7 +32,7 @@ const Profile = () => {
                 className="w-full h-full object-cover rounded-md shadow"
               />
             </div>
-            <div className="space-y-4 text-gray-700">
+            <div className="space-y-4 text-primary-bgText">
               <p className="text-justify leading-relaxed">
                 SMP NEGERI 244 JAKARTA adalah salah satu sekolah pendidikan
                 tingkat Sekolah Menengah Pertama (SMP) yang berlokasi di wilayah
@@ -64,16 +64,17 @@ const Profile = () => {
           {/* Brief History */}
           <Card className="h-full">
             <CardHeader className="bg-white text-white">
-              <CardTitle className="text-center font-bold text-2xl text-green-800 pb-2">
+              <CardTitle className="text-center font-bold text-2xl text-primary-base pb-2">
                 SEJARAH SINGKAT
               </CardTitle>
-              <div className="w-12 h-1 bg-yellow-400 mx-auto mt-2"></div>
+              <div className="w-12 h-1 bg-secondary-hover mx-auto mt-2"></div>
             </CardHeader>
             <CardContent className="my-4 mx-4">
-              <div className="space-y-4 text-gray-700">
+              <div className="space-y-4 text-primary-bgText">
                 <p>
-                  Perjalanan berdirinya SMP NEGERI 244 JAKARTA diawali dari bentuk kelas 
-                  jauh hingga menjadi satuan pendidikan mandiri. Berikut ringkasan sejarah sekolah:
+                  Perjalanan berdirinya SMP NEGERI 244 JAKARTA diawali dari
+                  bentuk kelas jauh hingga menjadi satuan pendidikan mandiri.
+                  Berikut ringkasan sejarah sekolah:
                 </p>
                 <ul className="space-y-2 list-disc list-inside">
                   <li>1982 - 1986</li>
@@ -95,13 +96,13 @@ const Profile = () => {
           {/* Support Facilities */}
           <Card className="h-full">
             <CardHeader className="bg-white text-white">
-              <CardTitle className="text-center font-bold text-2xl text-green-800 pb-2">
+              <CardTitle className="text-center font-bold text-2xl text-primary-base pb-2">
                 FASILITAS PENUNJANG
               </CardTitle>
-              <div className="w-12 h-1 bg-yellow-400 mx-auto mt-2"></div>
+              <div className="w-12 h-1 bg-secondary-hover mx-auto mt-2"></div>
             </CardHeader>
             <CardContent className="my-4 mx-4">
-              <div className="space-y-4 text-gray-700">
+              <div className="space-y-4 text-primary-bgText">
                 <p>
                   Untuk mendukung proses pembelajaran yang optimal, SMP NEGERI
                   244 JAKARTA telah dilengkapi dengan fasilitas berikut:
@@ -126,13 +127,13 @@ const Profile = () => {
           {/* Motto */}
           <Card className="h-full">
             <CardHeader className="bg-white text-white">
-              <CardTitle className="text-center font-bold text-2xl text-green-800 pb-2">
+              <CardTitle className="text-center font-bold text-2xl text-primary-base pb-2">
                 MOTTO
               </CardTitle>
-              <div className="w-12 h-1 bg-yellow-400 mx-auto mt-2"></div>
+              <div className="w-12 h-1 bg-secondary-hover mx-auto mt-2"></div>
             </CardHeader>
             <CardContent className="flex items-center justify-center my-4 mx-4">
-              <p className="text-center text-gray-700 font-medium text-lg">
+              <p className="text-center text-primary-bgText font-medium text-lg">
                 Unggul Prestasi, Luhur Jati Diri, Tanggap Teknologi
               </p>
             </CardContent>
@@ -141,13 +142,13 @@ const Profile = () => {
           {/* Slogan */}
           <Card className="h-full">
             <CardHeader className="bg-white text-white">
-              <CardTitle className="text-center font-bold text-2xl text-green-800 pb-2">
+              <CardTitle className="text-center font-bold text-2xl text-primary-base pb-2">
                 SLOGAN
               </CardTitle>
-              <div className="w-12 h-1 bg-yellow-400 mx-auto mt-2"></div>
+              <div className="w-12 h-1 bg-secondary-hover mx-auto mt-2"></div>
             </CardHeader>
             <CardContent className="flex items-center justify-center my-4 mx-4">
-              <p className="text-center text-gray-700 font-medium text-lg">
+              <p className="text-center text-primary-bgText font-medium text-lg">
                 IMPIAN (Iman, Rajin, dan Nyaman)
               </p>
             </CardContent>

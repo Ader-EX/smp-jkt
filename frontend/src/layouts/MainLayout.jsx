@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { IoIosArrowUp } from "react-icons/io";
 import { useLocation } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 
 const MainLayout = ({ children }) => {
   const location = useLocation();
@@ -37,13 +38,13 @@ const MainLayout = ({ children }) => {
       <main className="">{children}</main>
       <Footer />
       {showScrollTop && (
-        <button
+        <Button
           onClick={scrollToTop}
           className="fixed bottom-6 right-6 p-4  rounded-full bg-black/60 text-white shadow-lg hover:bg-primary-dark transition"
           aria-label="Scroll to top"
         >
           <IoIosArrowUp className="h-8 w-8" />
-        </button>
+        </Button>
       )}
     </div>
   );

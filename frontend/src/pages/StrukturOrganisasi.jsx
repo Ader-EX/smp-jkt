@@ -13,10 +13,10 @@ const StrukturOrganisasi = () => {
             { label: "Struktur Organisasi" }, // current page
           ]}
         />
-        <h3 className="text-center font-bold text-2xl text-green-800 mb-4">
+        <h3 className="text-center font-bold text-2xl text-primary-base mb-4">
           STRUKTUR ORGANISASI
         </h3>
-        <div className="w-32 h-1 bg-yellow-400 mx-auto mb-8"></div>
+        <div className="w-32 h-1 bg-secondary-hover mx-auto mb-8"></div>
         <div className="flex w-full justify-center">
           <img src={struktur} alt="Kalender Akademik" className="" />
         </div>

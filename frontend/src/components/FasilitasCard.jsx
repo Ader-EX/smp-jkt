@@ -6,21 +6,15 @@ import {
   ButtonBack,
   ButtonNext,
   Dot,
-<<<<<<< HEAD
-  DotGroup
-=======
->>>>>>> 0104e040fae8c08e08f7c18fa18295e5b95809e0
+  DotGroup,
 } from "pure-react-carousel";
 import "pure-react-carousel/dist/react-carousel.es.css";
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Card } from "./ui/card";
 
 const FasilitasCard = ({ title, image, logo }) => (
-<<<<<<< HEAD
-  <div className="bg-white rounded-none shadow-lg overflow-hidden mx-2 h-80">
-=======
-  <div className="bg-white rounded-lg shadow-lg overflow-hidden mx-2 h-80">
->>>>>>> 0104e040fae8c08e08f7c18fa18295e5b95809e0
+  <Card>
     <div className="relative h-56">
       <img src={image} alt={title} className="w-full h-full object-cover" />
       {logo && (
@@ -30,11 +24,11 @@ const FasilitasCard = ({ title, image, logo }) => (
       )}
     </div>
     <div className="p-6 flex items-center justify-center h-24">
-      <h3 className="text-lg font-semibold text-gray-800 text-center">
+      <h3 className="text-lg font-semibold text-primary-bgText text-center">
         {title}
       </h3>
     </div>
-  </div>
+  </Card>
 );
 
 const FasilitasSection = ({ facilities }) => {
@@ -62,20 +56,12 @@ const FasilitasSection = ({ facilities }) => {
   }, []);
 
   return (
-<<<<<<< HEAD
-    <section className="py-16 bg-green-800 text-white relative">
-=======
-    <section className="py-16 bg-green-700 text-white relative">
->>>>>>> 0104e040fae8c08e08f7c18fa18295e5b95809e0
+    <section className="py-16 bg-primary-base text-white relative">
       <div className="container mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold mb-4">FASILITAS</h2>
-<<<<<<< HEAD
-          <div className="w-32 h-1 bg-yellow-400 mx-auto"></div>
-=======
-          <div className="w-20 h-1 bg-yellow-400 mx-auto"></div>
->>>>>>> 0104e040fae8c08e08f7c18fa18295e5b95809e0
+          <div className="w-32 h-1 bg-secondary-hover mx-auto"></div>
         </div>
 
         <CarouselProvider
@@ -110,12 +96,7 @@ const FasilitasSection = ({ facilities }) => {
               ))}
             </Slider>
           </div>
-<<<<<<< HEAD
-          
-            
-=======
 
->>>>>>> 0104e040fae8c08e08f7c18fa18295e5b95809e0
           {/* Dot Indicators */}
           {/* <div className="flex justify-center mt-8 space-x-2">
             {facilities.map((_, index) => (
@@ -129,29 +110,26 @@ const FasilitasSection = ({ facilities }) => {
               />
             ))}
           </div> */}
-<<<<<<< HEAD
 
           <div className="flex justify-center mt-8 space-x-2">
-              <DotGroup
-                className="flex space-x-2"
-                dotNumbers={[0, 1,]}
-                renderDots={({ currentSlide, totalSlides }) =>
-                  Array.from({ length: totalSlides - 2 }, (_, index) => (
-                    <Dot
-                      key={index}
-                      slide={index}
-                      className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                        index === currentSlide
-                          ? "bg-yellow-400"
-                          : "bg-gray-300 hover:bg-gray-400"
-                      }`}
-                    />
-                  ))
-                }
-              />
-            </div>
-=======
->>>>>>> 0104e040fae8c08e08f7c18fa18295e5b95809e0
+            <DotGroup
+              className="flex space-x-2"
+              dotNumbers={[0, 1]}
+              renderDots={({ currentSlide, totalSlides }) =>
+                Array.from({ length: totalSlides - 2 }, (_, index) => (
+                  <Dot
+                    key={index}
+                    slide={index}
+                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                      index === currentSlide
+                        ? "bg-secondary-hover"
+                        : "bg-gray-300 hover:bg-gray-400"
+                    }`}
+                  />
+                ))
+              }
+            />
+          </div>
         </CarouselProvider>
       </div>
 

@@ -63,28 +63,27 @@ const Guru = () => {
         </div>
 
         <div className="w-full flex justify-end items-center mt-4">
-        <div className="flex items-center gap-4">
-          <h6>Cari:</h6>
-          <Input
-            type="text"
-            placeholder="Cari nama guru..."
-            className="border rounded px-3 py-1 text-sm w-64"
-            value={searchTerm}
-            onChange={(e) => {
-              setSearchTerm(e.target.value);
-              setCurrentPage(1);
-            }}
-          />
-          
+          <div className="flex items-center gap-4">
+            <h6>Cari:</h6>
+            <Input
+              type="text"
+              placeholder="Cari nama guru..."
+              className="border rounded px-3 py-1 text-sm w-64"
+              value={searchTerm}
+              onChange={(e) => {
+                setSearchTerm(e.target.value);
+                setCurrentPage(1);
+              }}
+            />
+          </div>
         </div>
-      </div>
       </div>
 
       {/* Table */}
       <div className="overflow-x-auto bg-white rounded-lg shadow-sm">
         <table className="w-full border-collapse">
           <thead>
-            <tr className="bg-yellow-400">
+            <tr className="bg-secondary-hover">
               <th className="border px-4 py-2">No</th>
               <th className="border px-4 py-2">Nama Guru</th>
               <th className="border px-4 py-2">NIP</th>

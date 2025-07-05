@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { ChevronLeft, ChevronDown } from "lucide-react";
 import logosmp from "../assets/logo-smp.png";
 import logosmpn from "../assets/logo.png";
+import { Button } from "@/components/ui/button";
 
 export default function InfoKelasBaru() {
   const [username, setUsername] = useState("");
@@ -24,12 +25,12 @@ export default function InfoKelasBaru() {
   return (
     <div className="min-h-screen  flex items-center justify-center p-4">
       <div className="w-full max-w-md">
-        {/* Back button */}
+        {/* Back Button */}
         <a href="/">
-          <button className="mb-6 flex items-center text-gray-600 hover:text-gray-800 transition-colors">
+          <Button>
             <ChevronLeft className="w-5 h-5 mr-1" />
             <span className="text-sm">Kembali</span>
-          </button>
+          </Button>
         </a>
 
         {/* Login Card */}
@@ -52,7 +53,7 @@ export default function InfoKelasBaru() {
           <div className="space-y-6">
             {/* Username */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-primary-bgText mb-2">
                 Username
               </label>
               <input
@@ -67,7 +68,7 @@ export default function InfoKelasBaru() {
 
             {/* Password */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-primary-bgText mb-2">
                 Password
               </label>
               <input
@@ -82,14 +83,14 @@ export default function InfoKelasBaru() {
 
             {/* Academic Year Dropdown */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-primary-bgText mb-2">
                 Tahun Ajaran
               </label>
               <div className="relative">
                 <button
-                  type="button"
+                  type="Button"
+                  className="flex gap-x-2 border-2"
                   onClick={() => setShowDropdown(!showDropdown)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg bg-white text-left flex items-center justify-between focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all"
                 >
                   <span
                     className={academicYear ? "text-gray-900" : "text-gray-400"}
@@ -108,12 +109,11 @@ export default function InfoKelasBaru() {
                     {academicYears.map((year) => (
                       <button
                         key={year}
-                        type="button"
+                        type="Button"
                         onClick={() => {
                           setAcademicYear(year);
                           setShowDropdown(false);
                         }}
-                        className="w-full px-4 py-3 text-left hover:bg-gray-50 first:rounded-t-lg last:rounded-b-lg transition-colors"
                       >
                         {year}
                       </button>
@@ -132,25 +132,20 @@ export default function InfoKelasBaru() {
                   onChange={(e) => setRememberMe(e.target.checked)}
                   className="w-4 h-4 text-green-600 border-gray-300 rounded focus:ring-green-500"
                 />
-                <span className="ml-2 text-sm text-gray-700">Ingat saya</span>
+                <span className="ml-2 text-sm text-primary-bgText">
+                  Ingat saya
+                </span>
               </label>
 
-              <button
-                type="button"
-                className="text-sm text-gray-500 hover:text-gray-700 transition-colors"
-              >
+              <Button variant="destructive" type="Button">
                 Forgot Password ?
-              </button>
+              </Button>
             </div>
 
             {/* Login Button */}
-            <button
-              type="button"
-              onClick={handleSubmit}
-              className="w-full bg-green-600 hover:bg-green-700 text-white font-medium py-3 px-4 rounded-lg transition-colors focus:ring-2 focus:ring-green-500 focus:ring-offset-2 outline-none"
-            >
+            <Button type="Button" onClick={handleSubmit}>
               Login
-            </button>
+            </Button>
           </div>
         </div>
       </div>

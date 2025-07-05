@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import PageHeader from "@/components/ui/PageHeader";
 import axios from "axios";
+import { Button } from "@/components/ui/button";
 
 const Kurikulum = () => {
   const [data, setData] = useState([]);
@@ -48,8 +49,8 @@ const Kurikulum = () => {
   };
 
   const ImageFallback = ({ item }) => (
-    <div className="w-full h-full bg-gray-100 flex flex-col items-center justify-center text-gray-500">
-      <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-3">
+    <div className="w-full h-full bg-gray-100 flex flex-col items-center justify-center text-primary-bgText">
+      <div className="w-16 h-16 bg-primary-base/10 rounded-full flex items-center justify-center mb-3">
         <svg
           className="w-8 h-8 text-green-600"
           fill="none"
@@ -108,42 +109,39 @@ const Kurikulum = () => {
             </div>
 
             <div className="p-4">
-              <h3 className="text-sm text-gray-500">
-                12/06/2025
-              </h3>
-              <h3 className="text-lg font-semibold text-gray-800 mb-8">
+              <h3 className="text-sm text-primary-bgText">12/06/2025</h3>
+              <h3 className="text-lg font-semibold text-primary-bgText mb-8">
                 {item.nama}
               </h3>
 
               <div className="flex justify-end">
-
-              {/* Download Button */}
-              <button
-                onClick={() =>
-                  handleDownload(
-                    `http://localhost:3000${item.file}`,
-                    `${item.nama}.pdf`
-                  )
-                }
-                className="flex justify-end bg-green-800 hover:bg-green-700 text-white py-2 px-4 rounded-none transition-colors duration-200 flex items-center justify-center space-x-2"
-              >
-                <svg
-                  className="w-4 h-4"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
+                {/* Download Button */}
+                <Button
+                  onClick={() =>
+                    handleDownload(
+                      `http://localhost:3000${item.file}`,
+                      `${item.nama}.pdf`
+                    )
+                  }
+                  className="flex justify-end bg-primary-base hover:bg-primary-base text-white py-2 px-4 rounded-none transition-colors duration-200 flex items-center justify-center space-x-2"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                  />
-                </svg>
-                <span>Unduh</span>
-              </button>
+                  <svg
+                    className="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                    />
+                  </svg>
+                  <span>Unduh</span>
+                </Button>
+              </div>
             </div>
-          </div>
           </div>
         ))}
       </div>
@@ -151,7 +149,7 @@ const Kurikulum = () => {
       {/* Show message if no data */}
       {data.length === 0 && (
         <div className="text-center py-12">
-          <p className="text-gray-500 text-lg">
+          <p className="text-primary-bgText text-lg">
             Tidak ada data kurikulum tersedia
           </p>
         </div>
@@ -160,33 +158,33 @@ const Kurikulum = () => {
       {/* Pagination Controls */}
       {totalPages > 1 && (
         <div className="flex justify-center items-center space-x-2 mt-12">
-          <button
+          <Button
             onClick={() => setPage((p) => Math.max(1, p - 1))}
             disabled={page === 1}
             className="px-4 py-2 border border-gray-300 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50 transition-colors duration-200"
           >
             Prev
-          </button>
+          </Button>
           {Array.from({ length: totalPages }, (_, i) => (
-            <button
+            <Button
               key={i + 1}
               onClick={() => setPage(i + 1)}
               className={`px-4 py-2 border rounded-lg transition-colors duration-200 ${
                 page === i + 1
-                  ? "bg-green-600 text-white border-green-600"
+                  ? "bg-primary-base text-white border-green-600"
                   : "border-gray-300 hover:bg-gray-50"
               }`}
             >
               {i + 1}
-            </button>
+            </Button>
           ))}
-          <button
+          <Button
             onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
             disabled={page === totalPages}
             className="px-4 py-2 border border-gray-300 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50 transition-colors duration-200"
           >
             Next
-          </button>
+          </Button>
         </div>
       )}
     </div>

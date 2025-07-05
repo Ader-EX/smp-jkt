@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
+import { Button } from "./ui/button";
 
 const CustomDialog = ({
   buttonLabel = "Open Dialog",
@@ -20,12 +21,12 @@ const CustomDialog = ({
   return (
     <>
       {/* Trigger Button */}
-      <button
+      <Button
         onClick={handleOpen}
-        className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+        className="px-4 py-2 bg-neutral-blue text-white rounded hover:bg-neutral-blue"
       >
         {buttonLabel}
-      </button>
+      </Button>
 
       {/* Dialog */}
       {open && (
@@ -35,12 +36,12 @@ const CustomDialog = ({
             <div>{children}</div>
             {/* Close Button */}
             <div className="mt-4 text-right">
-              <button
+              <Button
                 onClick={handleOpen}
                 className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
               >
                 Close
-              </button>
+              </Button>
             </div>
           </div>
         </div>

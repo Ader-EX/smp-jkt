@@ -55,12 +55,12 @@ const GaleriGridGrid = () => {
           pageCount={pageCount}
           onPageChange={handlePageClick}
           containerClassName="flex items-center space-x-2"
-          pageClassName="w-8 h-8 flex items-center justify-center rounded border text-sm font-medium cursor-pointer hover:bg-green-100"
-          activeClassName="bg-green-500 text-white"
+          pageClassName="w-8 h-8 flex items-center justify-center rounded border text-sm font-medium cursor-pointer hover:bg-primary-base/10"
+          activeClassName="bg-primary-base text-white"
           previousClassName="w-8 h-8 flex items-center justify-center rounded border cursor-pointer hover:bg-gray-200"
           nextClassName="w-8 h-8 flex items-center justify-center rounded border cursor-pointer hover:bg-gray-200"
           breakLabel="..."
-          breakClassName="w-8 h-8 flex items-center justify-center text-gray-500"
+          breakClassName="w-8 h-8 flex items-center justify-center text-primary-bgText"
         />
       </div>
     </div>

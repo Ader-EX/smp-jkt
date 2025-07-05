@@ -88,22 +88,22 @@ const Pengumuman = () => {
 
                     {/* Content Section */}
                     <div className="md:w-1/2 p-4  justify-center">
-                      <p className="text-xs text-gray-500 mb-1">
+                      <p className="text-xs text-primary-bgText mb-1">
                         {new Date(activity.createdAt).toLocaleDateString(
                           "id-ID"
                         )}
                       </p>
-                      <h2 className="text-lg font-semibold text-green-700 mb-2">
+                      <h2 className="text-lg font-semibold text-primary-base mb-2">
                         {activity.nama}
                       </h2>
-                      <p className="text-sm text-gray-700 leading-snug mb-3 line-clamp-3">
+                      <p className="text-sm text-primary-bgText leading-snug mb-3 line-clamp-3">
                         {activity.description}
                       </p>
                       <a
                         href={`/pengumuman/${activity.id}`}
                         className="inline-block"
                       >
-                        <Button className="bg-primary-base hover:bg-gray-700 text-white text-sm inline-flex w-auto">
+                        <Button className="bg-primary-base hover:bg-primary-bgText text-white text-sm inline-flex w-auto">
                           Baca Selengkapnya
                         </Button>
                       </a>
@@ -129,7 +129,9 @@ const Pengumuman = () => {
                   variant={page === i + 1 ? "default" : "ghost"}
                   size="sm"
                   className={
-                    page === i + 1 ? "bg-green-600 hover:bg-green-700" : ""
+                    page === i + 1
+                      ? "bg-primary-base hover:bg-primary-base"
+                      : ""
                   }
                   onClick={() => setPage(i + 1)}
                 >

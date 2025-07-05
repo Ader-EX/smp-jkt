@@ -1,11 +1,12 @@
 /* eslint-disable react/prop-types */
-import React, { useState } from "react";
-import { ChevronUp, Building2, MapPin, Home } from "lucide-react";
+import { useState } from "react";
+import { MapPin } from "lucide-react";
 import PageHeader from "@/components/ui/PageHeader";
 import ltOne from "../assets/denah/lt1.png";
 import ltTwo from "../assets/denah/lt2.png";
 import ltThree from "../assets/denah/lt3.png";
 import ltFour from "../assets/denah/lt4.png";
+import { Button } from "@/components/ui/button";
 
 const DenahSekolah = () => {
   const [selectedFloor, setSelectedFloor] = useState(1);
@@ -28,12 +29,12 @@ const DenahSekolah = () => {
   const FloorPlanDisplay = ({ floor }) => {
     return (
       <div className="bg-white border-2 border-gray-300 rounded-lg p-6 min-h-96">
-        <h2 className="text-xl font-bold text-center mb-6 text-gray-800">
+        <h2 className="text-xl font-bold text-center mb-6 text-primary-bgText">
           {floorPlans[floor].title}
         </h2>
 
         {/* Mock floor plan layout */}
-        <div className="relative border-2 border-gray-800 bg-gray-50 h-100 mx-auto max-w-2xl">
+        <div className="relative border-2 border-primary-bgText bg-gray-50 h-100 mx-auto max-w-2xl">
           {/* Room layouts vary by floor */}
           {floor === 1 && (
             <>
@@ -93,27 +94,27 @@ const DenahSekolah = () => {
         ]}
       />
 
-      <h3 className="text-center font-bold text-2xl text-green-800 mb-4">
-          DENAH SEKOLAH
+      <h3 className="text-center font-bold text-2xl text-primary-base mb-4">
+        DENAH SEKOLAH
       </h3>
-      <div className="w-32 h-1 bg-yellow-400 mx-auto mb-8"></div>
+      <div className="w-32 h-1 bg-secondary-hover mx-auto mb-8"></div>
 
       {/* Navigation Buttons */}
       <div className="max-w-6xl mx-auto mb-8">
         <div className="flex w-full gap-2 justify-between">
           {[1, 2, 3, 4].map((floor) => (
-            <button
+            <Button
               key={floor}
               onClick={() => setSelectedFloor(floor)}
               className={`px-8 py-3 w-full  font-medium transition-all duration-200 flex justify-center space-x-2 ${
                 selectedFloor === floor
                   ? "bg-primary-base text-white shadow-lg"
-                  : "bg-white text-gray-700 hover:bg-green-50 hover:text-green-600 border border-gray-200"
+                  : "bg-white text-primary-bgText hover:bg-green-50 hover:text-green-600 border border-gray-200"
               }`}
             >
               <MapPin className="w-4 h-4 self-center" />
               <span>Denah Lantai {floor}</span>
-            </button>
+            </Button>
           ))}
         </div>
       </div>

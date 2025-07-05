@@ -1,7 +1,8 @@
 /** @type {import('tailwindcss').Config} */
-
 import defaultTheme from "tailwindcss/defaultTheme";
 import tailwindPlugin from "@tailwindcss/typography";
+import tailwindcssAnimate from "tailwindcss-animate";
+
 export default {
   darkMode: ["class"],
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
@@ -18,11 +19,13 @@ export default {
             letterSpacing: "0%",
           },
         ],
+
         h1: [
           "35px",
           {
             lineHeight: "120%",
             letterSpacing: "-0.04em",
+            fontWeight: "bold",
           },
         ],
         h2: [
@@ -81,6 +84,7 @@ export default {
           border: "#2171E2",
           hover: "#B3B3B3",
           pressed: "#1C1C1C",
+          bgText: "#2d3748",
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
         },
@@ -88,7 +92,7 @@ export default {
           base: "#3A3F7C",
           background: "#2A6B3A",
           border: "#6ABD45",
-          hover: "#DDE24A",
+          hover: "#FDC700 ",
           pressed: "#EF2A4E",
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
@@ -99,6 +103,7 @@ export default {
           leaf: "#5DA945",
           mint: "#EDFCEB",
           yellow: "#FFD600",
+          blue: "#3B82F6",
         },
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
@@ -140,5 +145,5 @@ export default {
       },
     },
   },
-  plugins: [tailwindPlugin, require("tailwindcss-animate")],
+  plugins: [tailwindPlugin, tailwindcssAnimate],
 };

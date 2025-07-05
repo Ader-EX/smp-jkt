@@ -21,10 +21,10 @@ const SidebarNews = ({ sidebarActivities, tag = "pengumuman" }) => {
                 className="w-24 h-16 object-cover  mr-4 flex-shrink-0"
               />
               <div className="flex-1">
-                <h4 className="font-semibold text-sm text-gray-800 leading-tight mb-1">
+                <h4 className="font-semibold text-sm text-primary-bgText leading-tight mb-1">
                   {item.title}
                 </h4>
-                <p className="text-xs text-gray-500">{item.date}</p>
+                <p className="text-xs text-primary-bgText">{item.date}</p>
               </div>
             </a>
           ))}

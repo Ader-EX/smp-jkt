@@ -28,9 +28,9 @@ const IndonesianClock = () => {
   });
 
   return (
-    <div className="flex p-2 bg-white text-black font-bold gap-x-4">
-      <h3>{formatterDate.format(dateTime)}</h3>
-      <h3>{formatterTime.format(dateTime)}</h3>
+    <div className="flex p-2  bg-white text-black font-bold gap-x-4">
+      <p>{formatterDate.format(dateTime)}</p>
+      <p>{formatterTime.format(dateTime)}</p>
     </div>
   );
 };

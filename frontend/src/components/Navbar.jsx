@@ -9,12 +9,9 @@ import logo from "../assets/logo.png";
 
 import IndonesianClock from "./IndonesianClock";
 import SearchBar from "./Searchbar";
+import { Button } from "./ui/button";
 
 export const menuItems = [
-  {
-    name: "Beranda",
-    href: "/",
-  },
   {
     name: "Profil",
     children: [
@@ -22,7 +19,7 @@ export const menuItems = [
       { name: "Visi & Misi", href: "/visi-misi" },
       { name: "Tata Tertib", href: "/tata-tertib" },
       { name: "Struktur Organisasi", href: "/struktur-organisasi" },
-      { name: "Kurikulum", href: "/kurikulum" },
+      // { name: "Kurikulum", href: "/kurikulum" },
       { name: "Denah Sekolah", href: "/denah-sekolah" },
     ],
   },
@@ -36,17 +33,18 @@ export const menuItems = [
   {
     name: "Kesiswaan",
     children: [
-      { name: "Info Peserta Didik", href: "/info-peserta-didik" },
-      { name: "Info SPMB", href: "/info-spmb" },
+      { name: "Data Siswa", href: "/info-peserta-didik" },
+      // { name: "Info SPMB", href: "/info-spmb" },
       { name: "Info Mutasi", href: "/info-mutasi" },
-      { name: "Ekstrakurikuler", href: "/ekstrakurikuler" },
+      // { name: "Ekstrakurikuler", href: "/ekstrakurikuler" },
       { name: "Prestasi Siswa", href: "/prestasi-siswa" },
     ],
   },
   {
     name: "Kegiatan",
     children: [
-      { name: "Fasilitas Sekolah", href: "/fasilitas-sekolah" },
+      // { name: "Fasilitas Sekolah", href: "/fasilitas-sekolah" },
+      { name: "Ekstrakurikuler", href: "/ekstrakurikuler" },
       { name: "Berita", href: "/berita" },
       { name: "Galeri", href: "/galeri" },
     ],
@@ -60,19 +58,36 @@ export const menuItems = [
     ],
   },
   {
-    name: "CBT",
+    name: "Akademik",
     children: [
-      { name: "Admin CBT Server Cloud", href: "/admin-cbt" },
+      // { name: "Admin CBT Server Cloud", href: "/admin-cbt" },
+
       { name: "Ujian CBT", href: "/ujian-cbt" },
+      { name: "Info SPMB", href: "/info-spmb" },
+      { name: "E Rapor Kur-Mer", href: "http://36.94.124.5:7759/login" },
+      { name: "Kurikulum", href: "/kurikulum" },
     ],
   },
+  // {
+  //   name: "CBT",
+  //   children: [
+  //     { name: "Admin CBT Server Cloud", href: "/admin-cbt" },
+  //     { name: "Ujian CBT", href: "/ujian-cbt" },
+  //     { name: "E Rapor Kur-Mer", href: "http://36.94.124.5:7759/login" },
+  //     { name: "Kurikulum", href: "/kurikulum" },
+  //   ],
+  // },
+  // {
+  //   name: "Input Nilai Rapor",
+  //   children: [
+  //     { name: "E Rapor Kur-Mer", href: "http://36.94.124.5:7759/login" },
+  //     { name: "Tengah Semester", href: "http://36.94.124.5:7759/login" },
+  //     { name: "Rapor 5", href: "http://36.94.124.5:7759/login" },
+  //   ],
+  // },
   {
-    name: "Input Nilai Rapor",
-    children: [
-      { name: "E Rapor Kur-Mer", href: "http://36.94.124.5:7759/login" },
-      { name: "Tengah Semester", href: "http://36.94.124.5:7759/login" },
-      { name: "Rapor 5", href: "http://36.94.124.5:7759/login" },
-    ],
+    name: "Fasilitas",
+    href: "/fasilitas-sekolah",
   },
   {
     name: "Hubungi Kami",
@@ -112,14 +127,10 @@ const Navbar = () => {
           <li key={childKey} className={`relative ${isMobile ? "" : "group"}`}>
             <a
               href={child.href || "#"}
-              className={`flex px-2 py-2 justify-between w-full ${
+              className={`font-semibold flex px-2 py-2 justify-between w-full ${
                 isMobile
                   ? "text-primary-base py-2 font-medium hover:text-secondary-hover"
-<<<<<<< HEAD
-                  : "text-white bg-primary-base hover:bg-yellow-400 hover:text-black "
-=======
                   : "text-white bg-primary-base hover:bg-secondary-hover hover:text-black "
->>>>>>> 0104e040fae8c08e08f7c18fa18295e5b95809e0
               }`}
               onClick={(e) => {
                 if (child.children) {
@@ -160,11 +171,7 @@ const Navbar = () => {
           <li key={itemKey} className="relative group">
             <a
               href={item.href || "#"}
-<<<<<<< HEAD
-              className="py-2 px-3 flex justify-center items-center font-semibold text-white hover:text-yellow-400 rounded"
-=======
               className="py-2 px-3 flex justify-center items-center font-semibold text-white hover:text-secondary-hover rounded"
->>>>>>> 0104e040fae8c08e08f7c18fa18295e5b95809e0
               onClick={(e) => {
                 if (item.children) {
                   e.preventDefault();
@@ -210,9 +217,9 @@ const Navbar = () => {
               >
                 <span>{item.name}</span>
                 {item.children && (
-                  <button className="text-2xl">
+                  <Button className="text-2xl">
                     <RiArrowDropDownLine />
-                  </button>
+                  </Button>
                 )}
               </div>
             )}
@@ -230,7 +237,6 @@ const Navbar = () => {
   return (
     <nav className="border-gray-200 shadow-md w-full">
       <div className="bg-primary-base w-full py-2 md:py-4 px-2 md:px-4 text-white text-xs font-extralight">
-<<<<<<< HEAD
         <div className="mx-10 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1 sm:gap-2">
           <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
             <section className="flex gap-2 items-center">
@@ -238,15 +244,6 @@ const Navbar = () => {
               <span className="text-xs">(021) 4400872</span>
             </section>
             <section className="flex gap-2 items-center">
-=======
-        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1 sm:gap-2">
-          <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
-            <section className="flex gap-1 items-center">
-              <RiPhoneFill className="self-center text-xs" />
-              <span className="text-xs">(021) 4400872</span>
-            </section>
-            <section className="flex gap-1 items-center">
->>>>>>> 0104e040fae8c08e08f7c18fa18295e5b95809e0
               <RiMailFill className="self-center text-xs" />
               <span className="text-xs">smpnegeri244@gmail.com</span>
             </section>
@@ -264,7 +261,10 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className="w-full justify-center flex flex-col items-center py-3 md:py-6 px-4 bg-white">
+      <a
+        href="/"
+        className="w-full justify-center flex flex-col items-center py-3 md:py-6 px-4 bg-white"
+      >
         <img
           src={logo}
           alt="SMP Negeri 244 Jakarta Logo"
@@ -276,13 +276,9 @@ const Navbar = () => {
         <h4 className="text-sm md:text-lg text-center text-gray-600">
           Mencetak Calon Pemimpin Bangsa
         </h4>
-      </div>
+      </a>
       {/* Main Navigation */}
-<<<<<<< HEAD
-      <div className="w-full bg-red-500 mx-auto py-2 px-2 flex justify-center items-center">
-=======
       <div className="w-full bg-primary-base mx-auto py-2 px-2 flex justify-center items-center">
->>>>>>> 0104e040fae8c08e08f7c18fa18295e5b95809e0
         {renderDesktopMenu(menuItems)}
 
         {/* Mobile Menu Button */}
@@ -323,11 +319,7 @@ const Navbar = () => {
       </div>
 
       {/* Secondary color bar */}
-<<<<<<< HEAD
-      <div className="w-full bg-yellow-400 h-2"></div>
-=======
-      <div className="w-full bg-secondary-hover h-3"></div>
->>>>>>> 0104e040fae8c08e08f7c18fa18295e5b95809e0
+      <div className="w-full bg-secondary-hover h-2"></div>
 
       {/* Mobile Dropdown */}
       {isMobileMenuOpen && (

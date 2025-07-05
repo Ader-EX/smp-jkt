@@ -48,17 +48,16 @@ const Fasilitas = () => {
         />
 
         <div className="text-center mb-12">
-          
-          <h1 className="text-3xl font-bold text-gray-800 mb-2">  {/* AWALNYA ADA FASILITAS SEKOLAH */}
-            
+          <h1 className="text-3xl font-bold text-primary-bgText mb-2">
+            {" "}
+            {/* AWALNYA ADA FASILITAS SEKOLAH */}
           </h1>
-          
-          <h2 className="text-2xl font-bold text-green-800 mb-4">
+
+          <h2 className="text-2xl font-bold text-primary-base mb-4">
             FASILITAS UNGGULAN
           </h2>
-          <div className="w-32 h-1 bg-yellow-400 mx-auto mb-8"></div>
+          <div className="w-32 h-1 bg-secondary-hover mx-auto mb-8"></div>
         </div>
-        
 
         {/* First Row - 2 Gedung Sekolah */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
