@@ -115,7 +115,11 @@ const Navbar = () => {
               className={`flex px-2 py-2 justify-between w-full ${
                 isMobile
                   ? "text-primary-base py-2 font-medium hover:text-secondary-hover"
+<<<<<<< HEAD
                   : "text-white bg-primary-base hover:bg-yellow-400 hover:text-black "
+=======
+                  : "text-white bg-primary-base hover:bg-secondary-hover hover:text-black "
+>>>>>>> 0104e040fae8c08e08f7c18fa18295e5b95809e0
               }`}
               onClick={(e) => {
                 if (child.children) {
@@ -156,7 +160,11 @@ const Navbar = () => {
           <li key={itemKey} className="relative group">
             <a
               href={item.href || "#"}
+<<<<<<< HEAD
               className="py-2 px-3 flex justify-center items-center font-semibold text-white hover:text-yellow-400 rounded"
+=======
+              className="py-2 px-3 flex justify-center items-center font-semibold text-white hover:text-secondary-hover rounded"
+>>>>>>> 0104e040fae8c08e08f7c18fa18295e5b95809e0
               onClick={(e) => {
                 if (item.children) {
                   e.preventDefault();
@@ -222,6 +230,7 @@ const Navbar = () => {
   return (
     <nav className="border-gray-200 shadow-md w-full">
       <div className="bg-primary-base w-full py-2 md:py-4 px-2 md:px-4 text-white text-xs font-extralight">
+<<<<<<< HEAD
         <div className="mx-10 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1 sm:gap-2">
           <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
             <section className="flex gap-2 items-center">
@@ -229,6 +238,15 @@ const Navbar = () => {
               <span className="text-xs">(021) 4400872</span>
             </section>
             <section className="flex gap-2 items-center">
+=======
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1 sm:gap-2">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
+            <section className="flex gap-1 items-center">
+              <RiPhoneFill className="self-center text-xs" />
+              <span className="text-xs">(021) 4400872</span>
+            </section>
+            <section className="flex gap-1 items-center">
+>>>>>>> 0104e040fae8c08e08f7c18fa18295e5b95809e0
               <RiMailFill className="self-center text-xs" />
               <span className="text-xs">smpnegeri244@gmail.com</span>
             </section>
@@ -260,7 +278,11 @@ const Navbar = () => {
         </h4>
       </div>
       {/* Main Navigation */}
+<<<<<<< HEAD
       <div className="w-full bg-red-500 mx-auto py-2 px-2 flex justify-center items-center">
+=======
+      <div className="w-full bg-primary-base mx-auto py-2 px-2 flex justify-center items-center">
+>>>>>>> 0104e040fae8c08e08f7c18fa18295e5b95809e0
         {renderDesktopMenu(menuItems)}
 
         {/* Mobile Menu Button */}
@@ -301,7 +323,11 @@ const Navbar = () => {
       </div>
 
       {/* Secondary color bar */}
+<<<<<<< HEAD
       <div className="w-full bg-yellow-400 h-2"></div>
+=======
+      <div className="w-full bg-secondary-hover h-3"></div>
+>>>>>>> 0104e040fae8c08e08f7c18fa18295e5b95809e0
 
       {/* Mobile Dropdown */}
       {isMobileMenuOpen && (
